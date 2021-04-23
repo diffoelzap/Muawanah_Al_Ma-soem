@@ -70,16 +70,16 @@
 
   
   <!-- Vendor JS Files -->
-  <script src="<?=base_url()?>template_user/user/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="<?=base_url()?>template_user/user/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="<?=base_url()?>template_user/user/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="<?=base_url()?>template_user/user/assets/vendor/php-email-form/validate.js"></script>
-  <script src="<?=base_url()?>template_user/user/assets/vendor/purecounter/purecounter.js"></script>
-  <script src="<?=base_url()?>template_user/user/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="<?=base_url()?>template_user/user/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="<?=base_url()?>template/user/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?=base_url()?>template/user/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="<?=base_url()?>template/user/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="<?=base_url()?>template/user/assets/vendor/php-email-form/validate.js"></script>
+  <script src="<?=base_url()?>template/user/assets/vendor/purecounter/purecounter.js"></script>
+  <script src="<?=base_url()?>template/user/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="<?=base_url()?>template/user/assets/vendor/waypoints/noframework.waypoints.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="<?=base_url()?>template_user/user/assets/js/main.js"></script>
+  <script src="<?=base_url()?>template/user/assets/js/main.js"></script>
 
 </body>
 

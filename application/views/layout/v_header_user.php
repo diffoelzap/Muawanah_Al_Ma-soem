@@ -5,7 +5,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <h1 class="logo">
-        <a href="index.html"> <img src="<?=base_url()?>template_user/user/assets/img/logo/logo.png" width="80" height="80"></a>
+        <a href="index.html"> <img src="<?=base_url()?>template/user/assets/img/logo/logo.png" width="80" height="80"></a>
         
       
       </h1>
