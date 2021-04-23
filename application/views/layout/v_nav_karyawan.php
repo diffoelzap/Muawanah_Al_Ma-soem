@@ -1,4 +1,4 @@
-<div class="sidebar" data-active-color="blue" data-image="<?=base_url()?>template/karyawan/assets/img/sidebar-5.jpg">
+<div class="sidebar" data-active-color="blue" data-image="<?=base_url()?>template_karyawan/karyawan/assets/img/sidebar-5.jpg">
             <!--
         Tip 1: You can change the color of active element of the sidebar using: data-active-color="purple | blue | green | orange | red | rose"
         Tip 2: you can also add an image using data-image tag
@@ -17,7 +17,7 @@
             <div class="sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="<?=base_url()?>template/karyawan/assets/img/faces/avatar.jpg" />
+                        <img src="<?=base_url()?>template_karyawan/karyawan/assets/img/faces/avatar.jpg" />
                     </div>
                     <div class="info">
                         <a data-toggle="collapse" class="collapsed">
