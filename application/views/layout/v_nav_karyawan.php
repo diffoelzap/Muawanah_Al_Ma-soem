@@ -17,17 +17,17 @@
             <div class="sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="<?=base_url()?>template/karyawan/assets/img/faces/avatar.jpg" />
+                        <img src="<?=base_url('assets/gambar_profile/'.$data->foto_profil)?>" />
                     </div>
                     <div class="info">
                         <a data-toggle="collapse" class="collapsed">
-                            Tania Andrew
+                            <?= $data->nama_lengkap ?>
                         </a>
                     
                     </div>
                 </div>
                 <ul class="nav">
-                    <li <?php if($this->uri->segment(1) == 'karyawan'){echo 'class="active"';}?>>
+                    <li <?php if($this->uri->segment(1) == 'karyawan' || $this->uri->segment(2) == 'edit'){echo 'class="active"';}?>>
                         <a href="<?= base_url('karyawan')?>">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>

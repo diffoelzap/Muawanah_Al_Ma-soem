@@ -102,11 +102,17 @@
                                     <strong>Peringatan! </strong>','</div>');
 
                                     //notifikasi gagal upload
-                                    if($this->session->flashdata('error')){
+                                    if(isset($error_upload)){
                                         echo '<div class="alert alert-danger alert-dismissible" role="alert">
                                           
-                                        <strong>Error! </strong>' .$this->session->flashdata('error').'</div>';
+                                        <strong>Error! </strong>' .$error_upload.'</div>';
                                         
+                                    }
+                                    if ($this->session->flashdata('error')) 
+                                    {
+                                       echo ' <div class="alert alert-danger alert-dismissible" role="alert">
+                                       <strong>Sukses! </strong>'.$this->session->flashdata('error');
+                                       echo '</div>';
                                     }
                                     if ($this->session->flashdata('pesan')) 
                                     {
@@ -115,7 +121,7 @@
                                        echo '</div>';
                                     }
 
-                                    echo form_open_multipart('auth/add') 
+                                    echo form_open_multipart('auth/register') 
                                     ?>
                                         <div class="col-md-4 col-sm-4">
                                             <div class="fileinput fileinput-new text-center" data-provides="fileinput">
@@ -137,25 +143,25 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Username</label>
-                                                    <input type="text" name="username" class="form-control" required>
+                                                    <input type="text" name="username" class="form-control" value="<?= set_value('username')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Password</label>
-                                                    <input type="password" name="password" class="form-control"  required>
+                                                    <input type="password" name="password" class="form-control"  value="<?= set_value('password')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Nik</label>
-                                                    <input type="number" name="nik" class="form-control"  required>
+                                                    <input type="number" name="nik" class="form-control" value="<?= set_value('nik')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label class="control-label">Noreg</label>
-                                                    <input type="number" name="noreg" class="form-control"  required>
+                                                    <input type="number" name="noreg" class="form-control" value="<?= set_value('noreg')?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,19 +169,19 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Nama Lengkap</label>
-                                                    <input type="text" name="nama_lengkap" class="form-control"  required>
+                                                    <input type="text" name="nama_lengkap" class="form-control" value="<?= set_value('nama_lengkap')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Nama Panggilan</label>
-                                                    <input type="text" name="nama_panggilan" class="form-control"  required>
+                                                    <input type="text" name="nama_panggilan" class="form-control" value="<?= set_value('nama_panggilan')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Tempat Lahir</label>
-                                                    <input type="text" name="tempat_lahir" class="form-control"  required>
+                                                    <input type="text" name="tempat_lahir" class="form-control" value="<?= set_value('tempat_lahir')?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -183,7 +189,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Tanggal Lahir</label>
-                                                        <input type="text" name="tanggal_lahir" class="form-control" id="datepicker">
+                                                        <input type="text" name="tanggal_lahir" class="form-control" id="datepicker" value="<?= set_value('tanggal_lahir')?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -241,7 +247,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Tanggal Masuk</label>
-                                                    <input type="text" name="tanggal_masuk" class="form-control" id="datemasuk"  required>
+                                                    <input type="text" name="tanggal_masuk" class="form-control" id="datemasuk" value="<?= set_value('tanggal_masuk')?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -249,13 +255,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Alamat Rumah</label>
-                                                    <input type="text" name="rumah" class="form-control"  required>
+                                                    <input type="text" name="rumah" class="form-control" value="<?= set_value('rumah')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Alamat Tinggal</label>
-                                                    <input type="text" name="tinggal" class="form-control"  required>
+                                                    <input type="text" name="tinggal" class="form-control" value="<?= set_value('tinggal')?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -270,37 +276,37 @@
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Lokasi</label>
-                                                    <input type="text" name="lokasi" class="form-control"  required>
+                                                    <input type="text" name="lokasi" class="form-control" value="<?= set_value('lokasi')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Direktorat</label>
-                                                    <input type="text" name="direktorat" class="form-control"  required>
+                                                    <input type="text" name="direktorat" class="form-control" value="<?= set_value('direktorat')?>"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Divisi</label>
-                                                    <input type="text" name="divisi" class="form-control"  required>
+                                                    <input type="text" name="divisi" class="form-control" value="<?= set_value('divisi')?>" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Unit</label>
-                                                    <input type="text" name="unit" class="form-control">
+                                                    <input type="text" name="unit" class="form-control" value="<?= set_value('unit')?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Jabatan</label>
-                                                    <input type="text" name="jabatan" class="form-control"  required>
+                                                    <input type="text" name="jabatan" class="form-control" value="<?= set_value('jabatan')?>"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Golongan</label>
-                                                    <input type="text" name="golongan" class="form-control"  required>
+                                                    <input type="text" name="golongan" class="form-control" value="<?= set_value('golongan')?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -407,10 +413,10 @@
 </script>
 <script>
     $('#datepicker').datetimepicker({
-        format:"YYYY/MM/DD"
+        format:"YYYY-MM-DD"
     });
     $('#datemasuk').datetimepicker({
-        format:"YYYY/MM/DD"
+        format:"YYYY-MM-DD"
     });
 </script>
 <script>

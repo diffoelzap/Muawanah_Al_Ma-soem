@@ -83,5 +83,29 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?= base_url() ?>template/karyawan/assets/js/demo.js"></script>
 
+<script>
+    $('#datepicker').datetimepicker({
+        format:"YYYY-MM-DD"
+    });
+    $('#datemasuk').datetimepicker({
+        format:"YYYY-MM-DD"
+    });
+    $('#datetime').datetimepicker({
+        format:"HH:mm:ss"
+    });
+    $('#datesecon').datetimepicker({
+        format:"HH:mm:ss"
+    });
+
+
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500,0).slideUp(500,function() {
+            $(this).remove();
+            });
+    },2000)
+</script>
+
+
+
 <!-- Mirrored from demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2017 21:32:16 GMT -->
 </html>

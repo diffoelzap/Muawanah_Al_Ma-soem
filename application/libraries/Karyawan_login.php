@@ -18,7 +18,9 @@ class Karyawan_login
         if($cek)
         {   
             //jika benar
+            $id_karyawan = $cek->id_karyawan;
             $username = $cek->username;
+            $password = $cek->password;
             $nik = $cek->nik;
             $noreg = $cek->noreg;
             $nama_lengkap = $cek->nama_lengkap;
@@ -42,7 +44,9 @@ class Karyawan_login
             $foto_profile = $cek->foto_profil;
             //buat session
             
+            $this->ci->session->set_userdata('id_karyawan', $id_karyawan);
             $this->ci->session->set_userdata('username', $username);
+            $this->ci->session->set_userdata('password', $password);
             $this->ci->session->set_userdata('nik', $nik);
             $this->ci->session->set_userdata('noreg', $noreg);
             $this->ci->session->set_userdata('nama_lengkap', $nama_lengkap);
@@ -85,8 +89,11 @@ class Karyawan_login
     }
 
     public function logout()
-    {
-        $this->ci->session->unset_userdata('username');
+    {   
+            
+            $this->ci->session->unset_userdata('id_karyawan');
+            $this->ci->session->unset_userdata('username');
+            $this->ci->session->unset_userdata('password');
             $this->ci->session->unset_userdata('nik');
             $this->ci->session->unset_userdata('noreg');
             $this->ci->session->unset_userdata('nama_lengkap');
