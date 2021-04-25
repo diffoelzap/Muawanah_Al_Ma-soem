@@ -6,8 +6,8 @@
                                         <div class="d-flex flex-column align-items-center text-center">
                                             <img src="<?=base_url()?>template/karyawan/assets/img/faces/avatar.jpg" alt="Admin" class="rounded-circle" width="150">
                                         <div class="mt-3">
-                                        <h4>John Doe</h4>
-                                            <p class="text-secondary mb-1">Full Stack Developer</p>
+                                        <h4><?= $this->session->userdata('nama_lengkap') ?></h4>
+                                            <p class="text-secondary mb-1"><?= $this->session->userdata('jabatan') ?></p>
                                             <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                                             <button class="btn btn-outline-primary">Update Profile</button>
                                     </div>
@@ -26,7 +26,7 @@
                                             <label class="col-sm-3 label-on-left">NIK : </label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">3204281301920003</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('nik') ?></p>
                                                     
                                                 </div>
                                             </div>
@@ -35,7 +35,7 @@
                                             <label class="col-sm-3 label-on-left">Noreg :</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">4815</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('noreg') ?></p>
                                                     
                                                 </div>
                                             </div>
@@ -44,7 +44,7 @@
                                             <label class="col-sm-3 label-on-left">Nama Lengkap :</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Muhammad Lutfi</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('nama_lengkap') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -52,7 +52,7 @@
                                         <div class="row">
                                             <label class="col-sm-3 label-on-left">Nama Panggilan :</label>
                                             <div class="col-sm-9">
-                                                <div class="form-group">Lutfi</p>
+                                                <div class="form-group"><?= $this->session->userdata('nama_panggilan') ?></p>
                                                     
                                                 </div>
                                             </div>
@@ -61,7 +61,7 @@
                                             <label class="col-sm-3 label-on-left">Tempat Lahir : </label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Bandar Lampung</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('tempat_lahir') ?></p>
                                                     
                                                 </div>
                                             </div>
@@ -70,7 +70,7 @@
                                             <label class="col-sm-3 label-on-left">Tanggal Lahir :</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">1992-01-13</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('tanggal_lahir') ?></p>
                                                   
                                                 </div>
                                             </div>
@@ -79,7 +79,7 @@
                                             <label class="col-sm-3 label-on-left">Jenis Kelamin : </label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Laki - Laki</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('jenis_kelamin') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -88,7 +88,7 @@
                                             <label class="col-sm-3 label-on-left">Agama : </label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Islam</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('agama') ?></p>
                                                   
                                                 </div>
                                             </div>
@@ -97,7 +97,7 @@
                                             <label class="col-sm-3 label-on-left">Suku Bangsa :</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">WNI</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('suku_bangsa') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -105,7 +105,7 @@
                                         <div class="row">
                                             <label class="col-sm-3 label-on-left">Status Perkawinan :</label>
                                             <div class="col-sm-9">
-                                                <div class="form-group">Menikah</p>
+                                                <div class="form-group"><?= $this->session->userdata('status_perkawinan') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -114,7 +114,7 @@
                                             <label class="col-sm-3 label-on-left">Status Karyawan :</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Tetap</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('status_karyawan') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@
                                             <label class="col-sm-3 label-on-left">Tanggal Masuk :</label>
                                             <div class="col-sm-9">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">2015-04-09</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('tanggal_masuk') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@
                                             <label class="col-sm-2 label-on-left">Lokasi : </label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">PT. Masoem</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('lokasi') ?></p>
                                                  
                                                 </div>
                                             </div>
@@ -154,7 +154,7 @@
                                             <label class="col-sm-2 label-on-left">Direktorat :</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">AM3</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('direktorat') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -163,7 +163,7 @@
                                             <label class="col-sm-2 label-on-left">Divisi</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">AM3</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('divisi') ?></p>
                                                   
                                                 </div>
                                             </div>
@@ -171,7 +171,7 @@
                                         <div class="row">
                                             <label class="col-sm-2 label-on-left">Unit</label>
                                             <div class="col-sm-10">
-                                                <div class="form-group">-</p>
+                                                <div class="form-group"><?= $this->session->userdata('unit') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -180,7 +180,7 @@
                                             <label class="col-sm-2 label-on-left">Jabatan</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Pimpinan Divisi Marketing AM3</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('jabatan') ?></p>
                                                     
                                                 </div>
                                             </div>
@@ -189,7 +189,7 @@
                                             <label class="col-sm-2 label-on-left">Golongan</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">1.4</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('golongan') ?></p>
                                                    
                                                 </div>
                                             </div>
@@ -209,7 +209,7 @@
                                             <label class="col-sm-2 label-on-left">RUMAH</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Jl. Melati V No. 17-19 RT/RW 06/03 Ds. Rancaekek Kencana Kec. Rancaekek Kab. Bandung</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('rumah') ?></p>
                                                     <hr>
                                                 </div>
                                             </div>
@@ -218,7 +218,7 @@
                                             <label class="col-sm-2 label-on-left">TINGGAL</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static">Jl. Melati V No. 17-19 RT/RW 06/03 Ds. Rancaekek Kencana Kec. Rancaekek Kab. Bandung</p>
+                                                    <p class="form-control-static"><?= $this->session->userdata('tinggal') ?></p>
                                                    <hr>
                                                 </div>
                                             </div>

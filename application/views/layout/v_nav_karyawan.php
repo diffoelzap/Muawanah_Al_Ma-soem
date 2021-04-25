@@ -11,7 +11,7 @@
             </div>
             <div class="logo logo-mini">
                 <a  class="simple-text">
-                    Ct
+                    KY
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -27,27 +27,27 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    <li class="active">
-                        <a href="dashboard.html">
+                    <li <?php if($this->uri->segment(1) == 'karyawan'){echo 'class="active"';}?>>
+                        <a href="<?= base_url('karyawan')?>">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     
-                    <li>
-                        <a data-toggle="collapse" href="#formsExamples">
+                    <li <?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo 'class="active"';}?>>
+                        <a data-toggle="collapse" href="#formsExamples" <?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo 'aria-expanded="true"';}?>>
                             <i class="material-icons">content_paste</i>
                             <p>Tugas
                                 <b class="caret"></b>
                             </p>
                         </a>
-                        <div class="collapse" id="formsExamples">
+                        <div class="<?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo "collapse in";}else{echo "collapse";}?>" id="formsExamples">
                             <ul class="nav">
-                                <li>
-                                    <a href="Tugas/harian.html">Tugas Harian</a>
+                                <li <?php if($this->uri->segment(2) == 'harian'){echo 'class="active"';}?>>
+                                    <a href="<?= base_url('tugas/harian')?>">Tugas Harian</a>
                                 </li>
-                                <li>
-                                    <a href="Tugas/lapangan.html">Tugas Lapangan</a>
+                                <li <?php if($this->uri->segment(2) == 'lapangan'){echo 'class="active"';}?>>
+                                    <a href="<?= base_url('tugas/lapangan')?>">Tugas Lapangan</a>
                                 </li>
                             </ul>
                         </div>
@@ -77,6 +77,12 @@
                             <p>About</p>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('auth/logout_karyawan')?>">
+                            <i class="material-icons">exit_to_app</i>
+                            <p>Logout</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -98,7 +104,7 @@
                         </button>
                         <a class="navbar-brand" href="#"> Dashboard </a>
                     </div>
-                    <div class="collapse navbar-collapse">
+                    <!-- <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
@@ -108,7 +114,7 @@
                             </li>
                             <li class="separator hidden-lg hidden-md"></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </nav>         
             <div class="content">
