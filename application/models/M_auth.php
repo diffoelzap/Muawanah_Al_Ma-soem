@@ -13,6 +13,11 @@ class M_auth extends CI_Model {
         return $this->db->get()->row();
         
     }
+    public function add($data)
+    {
+        $this->db->insert('tbl_karyawan', $data);
+        
+    }
 }
 
 /* End of file ModelName.php */

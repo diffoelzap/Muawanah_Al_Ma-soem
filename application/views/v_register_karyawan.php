@@ -45,10 +45,10 @@
     <!--     Fonts and icons     -->
     <link href="<?= base_url() ?>template/karyawan/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="<?= base_url() ?>template/karyawan/assets/css/google-roboto-300-700.css" rel="stylesheet" />
+   
     <style>
         body {
             background-image: url("<?=base_url()?>template/karyawan/assets/img/register.jpg");
-            background-size: 1920px 1080px;
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -94,161 +94,219 @@
                                 <div class="card-content">
                                     <h4 class="card-title">Masukan Data Pribadi
                                     </h4>
-                                    <form>
+                                    <?php 
+
+                                    //notifikasi form kosong
+                                    echo validation_errors(' <div class="alert alert-warning alert-dismissible" role="alert">
+                                        
+                                    <strong>Peringatan! </strong>','</div>');
+
+                                    //notifikasi gagal upload
+                                    if($this->session->flashdata('error')){
+                                        echo '<div class="alert alert-danger alert-dismissible" role="alert">
+                                          
+                                        <strong>Error! </strong>' .$this->session->flashdata('error').'</div>';
+                                        
+                                    }
+                                    if ($this->session->flashdata('pesan')) 
+                                    {
+                                       echo ' <div class="alert alert-success alert-dismissible" role="alert">
+                                       <strong>Sukses! </strong>'.$this->session->flashdata('pesan');
+                                       echo '</div>';
+                                    }
+
+                                    echo form_open_multipart('auth/add') 
+                                    ?>
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail">
+                                                    <img src="<?= base_url() ?>template/karyawan/assets/img/image_placeholder.jpg">
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                <div>
+                                                    <span class="btn btn-info btn-round btn-file">
+                                                        <span class="fileinput-new">Pilih Foto</span>
+                                                        <span class="fileinput-exists">Ganti</span>
+                                                        <input type="file" name="gambar"/>
+                                                    </span>
+                                                    <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Hapus</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Emai</label>
-                                                    <input type="email" class="form-control" >
+                                                <div class="form-group">
+                                                    <label class="control-label">Username</label>
+                                                    <input type="text" name="username" class="form-control" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Password</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="password" name="password" class="form-control"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Nik</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="number" name="nik" class="form-control"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Noreg</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="number" name="noreg" class="form-control"  required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Nama Lengkap</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="nama_lengkap" class="form-control"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Nama Panggilan</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="nama_panggilan" class="form-control"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Tempat Lahir</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="tempat_lahir" class="form-control"  required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Tanggal Lahir</label>
-                                                    <input type="text" class="form-control" value="10/05/2016">
+                                                        <input type="text" name="tanggal_lahir" class="form-control" id="datepicker">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Jenis Kelamin</label>
-                                                    <input type="text" class="form-control">
+                                                <div class="form-group">
+                                                <label class="control-label">Jenis Kelamin</label>
+                                                    <select class="selectpicker" name="jenis_kelamin" data-style="select-with-transition" multiple title="Pilih Jenis Kelamin" required>
+                                                        <option value="Laki - Laki">Laki - Laki</option>
+                                                        <option value="Perempuan">Perempuan</option>
+                                                      </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Agama</label>
-                                                    <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Agama">
-                                                        <option disabled>Pilih Agama</option>
-                                                        <option value="1">Islam</option>
-                                                        <option value="2">Kristen</option>
-                                                        <option value="1">Hindu</option>
-                                                        <option value="2">Budha</option>
+                                                    <select class="selectpicker" name="agama" data-style="select-with-transition" multiple title="Pilih Agama" required>
+                                                        <option value="Islam">Islam</option>
+                                                        <option value="Kristen">Kristen</option>
+                                                        <option value="Hindu">Hindu</option>
+                                                        <option value="Budha">Budha</option>
                                                       </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-3">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Suku Bangsa</label>
-                                                    <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Suku bangsa">
+                                                    <select class="selectpicker" name="suku_bangsa" data-style="select-with-transition" multiple title="Pilih Suku bangsa" required>
                                                         <option disabled>Pilih Suku bangsa</option>
-                                                        <option value="1">WNA</option>
-                                                        <option value="2">WNI</option>
+                                                        <option value="WNA">WNA</option>
+                                                        <option value="WNI">WNI</option>
                                                       </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Status Perkawinan</label>
-                                                    <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Status Perkawinan">
+                                                    <select class="selectpicker" name="status_perkawinan" data-style="select-with-transition" multiple title="Pilih Status Perkawinan" required>
                                                         <option disabled>Pilih Status Perkawinan</option>
-                                                        <option value="1">Menikah</option>
-                                                        <option value="2">Belum Menikah</option>
+                                                        <option value="Menikah">Menikah</option>
+                                                        <option value="Belum Menikah">Belum Menikah</option>
                                                       </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Status Karyawan</label>
-                                                    <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Status karyawan">
+                                                    <select class="selectpicker" name="status_karyawan" data-style="select-with-transition" multiple title="Pilih Status karyawan" required>
                                                         <option disabled>Pilih Status karyawan</option>
-                                                        <option value="1">Tetap</option>
-                                                        <option value="2">Sementara</option>
+                                                        <option value="Tetap">Tetap</option>
+                                                        <option value="Sementara">Sementara</option>
                                                       </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Tanggal Masuk</label>
-                                                    <input type="text" class="form-control" value="10/05/2016">
+                                                    <input type="text" name="tanggal_masuk" class="form-control" id="datemasuk"  required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Alamat Rumah</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="rumah" class="form-control"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group label-floating">
+                                                <div class="form-group">
                                                     <label class="control-label">Alamat Tinggal</label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" name="tinggal" class="form-control"  required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <br>
                                             <div class="card-header card-header-icon" data-background-color="blue">
-                                                <i class="material-icons">filter_vintage</i>
+                                                <i class="material-icons">perm_identity</i>
                                             </div>
                                             <h4 class="card-title">Masukan Data Jabatan
                                             </h4>
                                             <br>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Nama Lengkap</label>
-                                                    <input type="text" class="form-control">
+                                                    <label class="control-label">Lokasi</label>
+                                                    <input type="text" name="lokasi" class="form-control"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Nama Panggilan</label>
-                                                    <input type="text" class="form-control">
+                                                    <label class="control-label">Direktorat</label>
+                                                    <input type="text" name="direktorat" class="form-control"  required>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label">Tempat Lahir</label>
-                                                    <input type="text" class="form-control">
+                                                    <label class="control-label">Divisi</label>
+                                                    <input type="text" name="divisi" class="form-control"  required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Unit</label>
+                                                    <input type="text" name="unit" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Jabatan</label>
+                                                    <input type="text" name="jabatan" class="form-control"  required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Golongan</label>
+                                                    <input type="text" name="golongan" class="form-control"  required>
                                                 </div>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-info pull-right">Registrasi</button>
                                         <div class="clearfix"></div>
-                                    </form>
+                                    <?php echo form_close() ?>
                                 </div>
                             </div>
                         </div>
@@ -295,6 +353,7 @@
 </body>
 </body>
 <!--   Core JS Files   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script src="<?= base_url() ?>template/karyawan/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>template/karyawan/assets/js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>template/karyawan/assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -346,7 +405,21 @@
         }, 700)
     });
 </script>
-
+<script>
+    $('#datepicker').datetimepicker({
+        format:"YYYY/MM/DD"
+    });
+    $('#datemasuk').datetimepicker({
+        format:"YYYY/MM/DD"
+    });
+</script>
+<script>
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500,0).slideUp(500,function() {
+            $(this).remove();
+            });
+    },2000)
+</script>
 
 <!-- Mirrored from demos.creative-tim.com/material-dashboard-pro/examples/pages/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2017 21:32:19 GMT -->
 </html>

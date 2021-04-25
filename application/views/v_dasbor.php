@@ -4,7 +4,7 @@
                                     <div class="card">
                                      <div class="card-body">
                                         <div class="d-flex flex-column align-items-center text-center">
-                                            <img src="<?=base_url()?>template/karyawan/assets/img/faces/avatar.jpg" alt="Admin" class="rounded-circle" width="150">
+                                            <img src="assets/gambar_profile/<?= $this->session->userdata('profil')?>" alt="Admin" class="rounded-circle">
                                         <div class="mt-3">
                                         <h4><?= $this->session->userdata('nama_lengkap') ?></h4>
                                             <p class="text-secondary mb-1"><?= $this->session->userdata('jabatan') ?></p>

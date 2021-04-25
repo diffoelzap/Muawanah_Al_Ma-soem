@@ -39,6 +39,7 @@ class Karyawan_login
             $golongan = $cek->golongan;
             $rumah = $cek->rumah;
             $tinggal = $cek->tinggal;
+            $foto_profile = $cek->foto_profil;
             //buat session
             
             $this->ci->session->set_userdata('username', $username);
@@ -62,6 +63,7 @@ class Karyawan_login
             $this->ci->session->set_userdata('golongan', $golongan);
             $this->ci->session->set_userdata('rumah', $rumah);
             $this->ci->session->set_userdata('tinggal', $tinggal);
+            $this->ci->session->set_userdata('profil', $foto_profile);
             
             //redirect ke admin
             redirect('karyawan');
@@ -105,6 +107,7 @@ class Karyawan_login
             $this->ci->session->unset_userdata('golongan');
             $this->ci->session->unset_userdata('rumah');
             $this->ci->session->unset_userdata('tinggal');
+            $this->ci->session->unset_userdata('profil');
             
         $this->ci->session->set_flashdata('pesan','Anda Berhasil Logout');
         redirect('auth/login');
