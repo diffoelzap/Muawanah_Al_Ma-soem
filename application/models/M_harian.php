@@ -19,6 +19,17 @@ class M_harian extends CI_Model {
         return $this->db->get()->result();
         
     }
+    public function edit($data)
+    {
+        $this->db->where('id_tugas_harian', $data['id_tugas_harian']);
+        $this->db->update('tbl_tugas_harian', $data);
+        
+    }
+    public function delete($data)
+    {
+        $this->db->where('id_tugas_harian', $data['id_tugas_harian']);
+        $this->db->delete('tbl_tugas_harian', $data);        
+    }
     
 
 }

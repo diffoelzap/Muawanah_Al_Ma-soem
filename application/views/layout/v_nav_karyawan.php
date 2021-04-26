@@ -102,7 +102,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#"> Dashboard </a>
+                        <a class="navbar-brand" href="#"> 
+                        <?php
+                        if($this->uri->segment(1) == 'karyawan') {
+                          echo 'Dashboard';  
+                        }else if($this->uri->segment(2) == 'edit'){
+                          echo 'Edit Profile'; 
+                        }else if($this->uri->segment(2) == 'harian'){
+                          echo 'Data Tugas Harian';
+                        }else if($this->uri->segment(2) == 'lapangan'){
+                          echo 'Data Tugas Lapangan';
+                        }
+                        ?> </a>
                     </div>
                     <!-- <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">

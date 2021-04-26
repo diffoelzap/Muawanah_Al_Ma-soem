@@ -1,4 +1,23 @@
 <div class="row">
+<?php
+    //notifikasi form kosong
+    echo validation_errors(' <div class="alert alert-warning alert-dismissible" role="alert">
+                                        
+    <strong>Peringatan! </strong>','</div>');
+    
+    if ($this->session->flashdata('error')) 
+    {
+       echo ' <div class="alert alert-danger alert-dismissible" role="alert">
+       <strong>Sukses! </strong>'.$this->session->flashdata('error');
+       echo '</div>';
+    }
+    if ($this->session->flashdata('pesan')) 
+    {
+       echo ' <div class="alert alert-success alert-dismissible" role="alert">
+       <strong>Sukses! </strong>'.$this->session->flashdata('pesan');
+       echo '</div>';
+    }
+    ?>
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-header card-header-icon" data-background-color="blue">
@@ -6,137 +25,195 @@
                                 </div>
                                 <div class="card-content">
                                     <h4 class="card-title">Input Tugas Lapangan</h4>
-                                    <form method="#" action="#">
-                                        <div class="form-group label-floating">
+                                    <?php
+                    
+                                    echo form_open('tugas/lapangan')
+                                    ?>
+                                        <div class="form-group">
                                             <label class="control-label">Nama</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="nama_lengkap" value="<?= $data->nama_lengkap?>" class="form-control" readonly>
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Noreg</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="noreg"  value="<?= $data->noreg?>" class="form-control" readonly>
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Tanggal</label>
-                                            <input type="text" class="form-control" value="10/05/2016">
+                                            <input type="text" name="tanggal_lapangan" class="form-control" id="date_lapangan">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Jam</label>
-                                            <input type="text" class="form-control" value="05:09:26">
+                                            <input type="text" name="jam_lapangan" class="form-control" id="time_lapangan">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Keterangan</label>
-                                            <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Keterangan">
+                                            <select class="selectpicker" name="keterangan" data-style="select-with-transition" multiple title="Pilih Keterangan">
                                                 <option disabled>Keterangan</option>
-                                                <option value="2">Tugas ke lapangan dari kantor </option>
-                                                <option value="3">Tugas ke lapangan langsung dari rumah</option>
+                                                <option value="Tugas ke lapangan dari kantor">Tugas ke lapangan dari kantor</option>
+                                                <option value="Tugas ke lapangan langsung dari rumah">Tugas ke lapangan langsung dari rumah</option>
                                             </select>
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Tujuan</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="tujuan" class="form-control">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Perkiraan Waktu Selesai</label>
-                                            <input type="text" class="form-control" value="05:09:26">
+                                            <input type="text" name="waktu_selesai" class="form-control" id="time_selesai">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Kepulangan</label>
-                                            <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Kepulangan">
+                                            <select class="selectpicker" name="kepulangan" data-style="select-with-transition" multiple title="Pilih Kepulangan">
                                                 <option disabled>Kepulangan</option>
-                                                <option value="2">Ke kantor lagi </option>
-                                                <option value="3">Langsung pulang rumah</option>
+                                                <option value="Ke kantor lagi">Ke kantor lagi</option>
+                                                <option value="Langsung pulang rumah">Langsung pulang rumah</option>
                                             </select>
                                         </div>
                                         <button type="submit" class="btn btn-fill btn-primary">Submit</button>
-                                    </form>
+                                    <?php echo form_close()?>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-9">
-                            <div class="card">
-                                <div class="card-header card-header-icon" data-background-color="blue">
-                                    <i class="material-icons">assignment</i>
-                                </div>
-                                <div class="card-content">
-                                    <h4 class="card-title">Riwayat Tugas Lapangan</h4>
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class="text-primary">
-                                                <th>Nama</th>
-                                                <th>Noreg</th>
-                                                <th>Tangggal</th>
-                                                <th>Jam</th>
-                                                <th>Keterangan</th>
-                                                <th>Tujuan</th>
-                                                <th>Selesai</th>
-                                                <th>Kepulangan</th>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Dakota Rice</td>
-                                                    <td>Niger</td>
-                                                    <td>Oud-Turnhout</td>
-                                                    <td class="text-primary">$36,738</td>
-                                                    <td>Dakota Rice</td>
-                                                    <td>Niger</td>
-                                                    <td>Oud-Turnhout</td>
-                                                    <td class="text-primary">$36,738</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Minerva Hooper</td>
-                                                    <td>Curaçao</td>
-                                                    <td>Sinaai-Waas</td>
-                                                    <td class="text-primary">$23,789</td>
-                                                    <td>Minerva Hooper</td>
-                                                    <td>Curaçao</td>
-                                                    <td>Sinaai-Waas</td>
-                                                    <td class="text-primary">$23,789</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sage Rodriguez</td>
-                                                    <td>Netherlands</td>
-                                                    <td>Baileux</td>
-                                                    <td class="text-primary">$56,142</td>
-                                                    <td>Sage Rodriguez</td>
-                                                    <td>Netherlands</td>
-                                                    <td>Baileux</td>
-                                                    <td class="text-primary">$56,142</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Philip Chaney</td>
-                                                    <td>Korea, South</td>
-                                                    <td>Overland Park</td>
-                                                    <td class="text-primary">$38,735</td>
-                                                    <td>Philip Chaney</td>
-                                                    <td>Korea, South</td>
-                                                    <td>Overland Park</td>
-                                                    <td class="text-primary">$38,735</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Doris Greene</td>
-                                                    <td>Malawi</td>
-                                                    <td>Feldkirchen in Kärnten</td>
-                                                    <td class="text-primary">$63,542</td>
-                                                    <td>Doris Greene</td>
-                                                    <td>Malawi</td>
-                                                    <td>Feldkirchen in Kärnten</td>
-                                                    <td class="text-primary">$63,542</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mason Porter</td>
-                                                    <td>Chile</td>
-                                                    <td>Gloucester</td>
-                                                    <td class="text-primary">$78,615</td>
-                                                    <td>Mason Porter</td>
-                                                    <td>Chile</td>
-                                                    <td>Gloucester</td>
-                                                    <td class="text-primary">$78,615</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                             </div>
-                        </div>
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="blue">
+                    <i class="material-icons">assignment</i>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">Riwayat Tugas Harian</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover table-condensed" id="lapangan"  role="grid">
+                            <thead class="text-primary">
+                                <td>No</td>
+                                <th>Nama</th>
+                                <th>Noreg</th>
+                                <th>Tangggal</th>
+                                <th>Jam</th>
+                                <th>Keterangan</th>
+                                <th>Tujuan</th>
+                                <th>Selesai</th>
+                                <th>Kepulangan</th>
+                                <th>Aksi</th>
+                            </thead>
+
+                            <tbody>
+                                <?php 
+                                $no = 1;
+                                foreach ($tugas_lapangan as $key => $value) {
+                                ?>
+                                <tr>
+                                    <td><?= $no++;?></td>
+                                    <td><?= $value->nama_lengkap?></td>
+                                    <td><?= $value->noreg?></td>
+                                    <td><?= $value->tanggal_lapangan?></td>
+                                    <td class="text-primary"><?= $value->jam_lapangan?></td>
+                                    <td><?= $value->keterangan?></td>
+                                    <td><?= $value->tujuan?></td>
+                                    <td class="text-primary"><?= $value->waktu_selesai?></td>
+                                    <td><?= $value->kepulangan?></td>
+                                    <td>
+                                    <button class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#edit<?= $value->id_tugas_lapangan ?>"><i class="material-icons">edit</i></button>
+                                     <!-- <button class="btn btn-danger btn-sm"   data-toggle="modal" data-target="#delete<?= $value->id_tugas_lapangan ?>"><i class="material-icons">delete</i></button> -->
+                                    </td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+         <!-- modal edit-->
+         <?php foreach ($tugas_lapangan as $key => $value) { ?>
+<div class="modal fade" id="edit<?= $value->id_tugas_lapangan ?>">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"><b>Edit Tugas Harian</b></h4>
+            </div>
+            <div class="modal-body">
+                    <?php 
+
+                        echo form_open('tugas/edit_Lapangan/'.$value->id_tugas_lapangan);
+                    ?>
+
+                  <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="nama_lengkap" value="<?= $value->nama_lengkap?>" class="form-control" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Noreg</label>
+                    <input type="text" name="noreg" value="<?= $value->noreg?>" class="form-control" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Tanggal Lapangan</label>
+                    <input type="date" name="tanggal_lapangan" value="<?= $value->tanggal_lapangan?>" class="form-control" placeholder="yyyy-dd-mm">
+                  </div>
+                  <div class="form-group">
+                    <label>Jam Lapangan</label>
+                    <input type="time" name="jam_lapangan" value="<?= $value->jam_lapangan?>" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Keterangan</label>
+                      <?php 
+                        if($value->keterangan == "Tugas ke lapangan dari kantor"){
+                            echo '<select class="selectpicker" name="keterangan" data-style="select-with-transition" multiple title="Tugas ke lapangan dari kantor">
+                            <option disabled>Keterangan</option>
+                            <option value="Tugas ke lapangan dari kantor" selected>Tugas ke lapangan dari kantor</option>
+                            <option value="Tugas ke lapangan langsung dari rumah">Tugas ke lapangan langsung dari rumah</option>
+                        </select>';
+                        }else if($value->keterangan == "Tugas ke lapangan langsung dari rumah"){
+                            echo '<select class="selectpicker" name="keterangan" data-style="select-with-transition" multiple title="Tugas ke lapangan langsung dari rumah">
+                            <option disabled>Keterangan</option>
+                            <option value="Tugas ke lapangan dari kantor">Tugas ke lapangan dari kantor</option>
+                            <option value="Tugas ke lapangan langsung dari rumah"  selected>Tugas ke lapangan langsung dari rumah</option>
+                        </select>';
+                        }
+                      ?>
+                            
+                </div>
+                  <div class="form-group">
+                    <label>Tujuan</label>
+                    <input type="text" name="tujuan" value="<?= $value->tujuan?>" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Waktu Selesai</label>
+                    <input type="text" name="waktu_selesai" value="<?= $value->waktu_selesai?>" class="apaaja form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Kepulangan</label>
+                    <?php 
+                        if($value->kepulangan == "Ke kantor lagi"){
+                            echo '<select class="selectpicker" name="kepulangan" data-style="select-with-transition" multiple title="Ke kantor lagi">
+                            <option disabled>Kepulangan</option>
+                            <option value="Ke kantor lagi" selected>Ke kantor lagi</option>
+                            <option value="Langsung pulang rumah">Langsung pulang rumah</option>
+                        </select>';
+                        }else if($value->kepulangan == "Langsung pulang rumah"){
+                            echo '<select class="selectpicker" name="kepulangan" data-style="select-with-transition" multiple title="Langsung pulang rumah">
+                            <option disabled>Kepulangan</option>
+                            <option value="Ke kantor lagi">Ke kantor lagi</option>
+                            <option value="Langsung pulang rumah"  selected>Langsung pulang rumah</option>
+                        </select>';
+                        }
+                      ?>
+                  </div>
+                  
+
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+            <?php
+                echo form_close();
+            ?>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+      <?php } ?>
