@@ -99,7 +99,7 @@
                                                             <div class="col-md-4">
                                                                 <div class="form-group label-floating">
                                                                     <label class="control-label">Tanggal Lahir</label>
-                                                                    <input type="text" name="tanggal_lahir" class="form-control" value="<?= $data->tanggal_lahir?>" id="datepicker">
+                                                                    <input type="text" name="tanggal_lahir" class="form-control" value="<?= $data->tanggal_lahir?>" id="datemasuk">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-4">

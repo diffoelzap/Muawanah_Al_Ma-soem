@@ -111,7 +111,7 @@
                                     <td><?= $value->tempat_harian?></td>
                                     <td>
                                     <button class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#edit<?= $value->id_tugas_harian ?>"><i class="material-icons">edit</i></button>
-                                     <!-- <button class="btn btn-danger btn-sm"   data-toggle="modal" data-target="#delete<?= $value->id_tugas_harian ?>"><i class="material-icons">delete</i></button> -->
+                                     
                                     </td>
                                 </tr>
                                 <?php } ?>

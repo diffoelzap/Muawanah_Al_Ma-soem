@@ -138,7 +138,6 @@
 
     });
 </script>
-
 <script>
     var today = new Date();
    
@@ -146,10 +145,7 @@
    var dd = today.getDate();
    var mm = today.getMonth()+1; 
    var yyyy = today.getFullYear();
-
-    $('#dialogsecond').datetimepicker({
-            format:"HH:mm:ss"
-    });
+    
     $('#datepicker').datetimepicker({
         format:"YYYY-MM-DD"
     });
@@ -162,14 +158,53 @@
     $('#datemasuk').datetimepicker({
         format:"YYYY-MM-DD"
     });
-    $('.datecuti').datetimepicker({
+    $('#datepinjaman').datetimepicker({
+        format:"YYYY-MM-DD"
+    });
+    $('#dialogdatepinjaman').datetimepicker({
+        format:"YYYY-MM-DD"
+    });
+    $('#dateawal').datetimepicker({
         format:"YYYY-MM-DD",
         minDate: new Date(yyyy+'-'+mm+'-'+dd)
     });
+    $('.datecuti').datetimepicker({
+        format:"YYYY-MM-DD",
+        minDate: new Date(yyyy+'-'+mm+'-'+dd),
+    });
+    $(function () {
+       $('.dateawaltanggal').datetimepicker({
+           format:'YYYY-MM-DD',
+           minDate: new Date(yyyy+'-'+mm+'-'+dd)
+       });
+       $('.dateakhirtanggal').datetimepicker({
+        format:'YYYY-MM-DD',
+        useCurrent: false //Important! See issue #1075
+
+        });
+       $(".dateawaltanggal").on("dp.change", function (e) {
+           $('.dateakhirtanggal').data("DateTimePicker").minDate(e.date);
+       });
+       $(".dateakhirtanggal").on("dp.change", function (e) {
+           $('.dateawaltanggal').data("DateTimePicker").maxDate(e.date);
+       });
+   });   
+   
+    $('#dateakhir').datetimepicker({
+        format:"YYYY-MM-DD",
+        minDate: new Date(yyyy+'-'+mm+'-'+dd),
+    });
+
     $('#datetime').datetimepicker({
         format:"HH:mm:ss"
     });
+    $('#timepinjaman').datetimepicker({
+        format:"HH:mm:ss"
+    });
     $('#datesecon').datetimepicker({
+        format:"HH:mm:ss"
+    });
+    $('#dialogtimepinjaman').datetimepicker({
         format:"HH:mm:ss"
     });
 
@@ -183,7 +218,6 @@
     $('#time_lapangan').datetimepicker({
         format:"HH:mm:ss"
     });
-    
 
     
 
@@ -231,6 +265,7 @@
     document.getElementById("date_lapangan").value = today_lapangan;
 
 </script>
+
 <script>
     (function () {
     function checkTime(i) {
@@ -243,6 +278,25 @@
             m = checkTime(today.getMinutes()),
             s = checkTime(today.getSeconds());
         document.getElementById('datetime').value = h + ":" + m + ":" + s;
+        t = setTimeout(function () {
+            startTime()
+        }, 500);
+    }
+    startTime();
+})();
+</script>
+<script>
+    (function () {
+    function checkTime(i) {
+        return (i < 10) ? "0" + i : i;
+    }
+
+    function startTime() {
+        var today = new Date(),
+            h = checkTime(today.getHours()),
+            m = checkTime(today.getMinutes()),
+            s = checkTime(today.getSeconds());
+        document.getElementById('timepinjaman').value = h + ":" + m + ":" + s;
         t = setTimeout(function () {
             startTime()
         }, 500);

@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    <li <?php if($this->uri->segment(1) == 'karyawan' || $this->uri->segment(2) == 'edit'){echo 'class="active"';}?>>
+                    <li <?php if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) != 'about'|| $this->uri->segment(2) == 'edit' && $this->uri->segment(2) != 'about'){echo 'class="active"';}?>>
                         <a href="<?= base_url('karyawan')?>">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
@@ -71,8 +71,8 @@
                         </div>
                     </li>
                     
-                    <li>
-                        <a href="about.html">
+                    <li <?php if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) == 'about'){echo 'class="active"';}?>>
+                        <a href="<?= base_url('karyawan/about')?>">
                             <i class="material-icons">info</i>
                             <p>About</p>
                         </a>
@@ -104,7 +104,7 @@
                         </button>
                         <a class="navbar-brand" href="#"> 
                         <?php
-                        if($this->uri->segment(1) == 'karyawan') {
+                        if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) != 'about') {
                           echo 'Dashboard';  
                         }else if($this->uri->segment(2) == 'edit'){
                           echo 'Edit Profile'; 
@@ -116,6 +116,8 @@
                             echo 'Data Permohonan Cuti';
                         }else if($this->uri->segment(2) == 'peminjaman'){
                             echo 'Data Peminjaman Mobil';
+                        }else if($this->uri->segment(2) == 'about'){
+                            echo 'Saran dan Masukan';
                         }
                         ?> </a>
                     </div>
