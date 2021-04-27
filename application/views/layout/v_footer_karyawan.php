@@ -140,6 +140,13 @@
 </script>
 
 <script>
+    var today = new Date();
+   
+
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; 
+   var yyyy = today.getFullYear();
+
     $('#dialogsecond').datetimepicker({
             format:"HH:mm:ss"
     });
@@ -154,6 +161,10 @@
     });
     $('#datemasuk').datetimepicker({
         format:"YYYY-MM-DD"
+    });
+    $('.datecuti').datetimepicker({
+        format:"YYYY-MM-DD",
+        minDate: new Date(yyyy+'-'+mm+'-'+dd)
     });
     $('#datetime').datetimepicker({
         format:"HH:mm:ss"
@@ -174,12 +185,7 @@
     });
     
 
-    var today = new Date();
-   
-
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; 
-    var yyyy = today.getFullYear();
+    
 
     if(dd<10) 
     {
@@ -192,9 +198,10 @@
     } 
     today = yyyy+'-'+mm+'-'+dd;
 
-  
+    
     document.getElementById("datepicker").value = today;
 
+   
 </script>
 <script>
      window.setTimeout(function() {

@@ -52,20 +52,20 @@
                             </ul>
                         </div>
                     </li>
-                    <li>
+                    <li <?php if($this->uri->segment(2) == 'cuti' || $this->uri->segment(2) == 'peminjaman'){echo 'class="active"';}?>>
                         <a data-toggle="collapse" href="#tablesExamples">
                             <i class="material-icons">date_range</i>
                             <p>Permohonan
                                 <b class="caret"></b>
                             </p>
                         </a>
-                        <div class="collapse" id="tablesExamples">
+                        <div class="<?php if($this->uri->segment(2) == 'cuti' || $this->uri->segment(2) == 'peminjaman'){echo "collapse in";}else{echo "collapse";}?>" id="tablesExamples">
                             <ul class="nav">
-                                <li>
-                                    <a href="Permohonan/cuti.html">Cuti</a>
+                                <li <?php if($this->uri->segment(2) == 'cuti'){echo 'class="active"';}?>>
+                                    <a href="<?= base_url('permohonan/cuti')?>">Cuti</a>
                                 </li>
-                                <li>
-                                    <a href="Permohonan/mobil.html">Peminjaman Mobil</a>
+                                <li <?php if($this->uri->segment(2) == 'peminjaman'){echo 'class="active"';}?>>
+                                    <a href="<?= base_url('permohonan/peminjaman')?>">Peminjaman Mobil</a>
                                 </li>
                             </ul>
                         </div>
@@ -112,6 +112,10 @@
                           echo 'Data Tugas Harian';
                         }else if($this->uri->segment(2) == 'lapangan'){
                           echo 'Data Tugas Lapangan';
+                        }else if($this->uri->segment(2) == 'cuti'){
+                            echo 'Data Permohonan Cuti';
+                        }else if($this->uri->segment(2) == 'peminjaman'){
+                            echo 'Data Peminjaman Mobil';
                         }
                         ?> </a>
                     </div>
