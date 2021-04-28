@@ -1,4 +1,23 @@
 <div class="row">
+<?php
+    //notifikasi form kosong
+    echo validation_errors(' <div class="alert alert-warning alert-dismissible" role="alert">
+                                        
+    <strong>Peringatan! </strong>','</div>');
+    
+    if ($this->session->flashdata('error')) 
+    {
+       echo ' <div class="alert alert-danger alert-dismissible" role="alert">
+       <strong>Sukses! </strong>'.$this->session->flashdata('error');
+       echo '</div>';
+    }
+    if ($this->session->flashdata('pesan')) 
+    {
+       echo ' <div class="alert alert-success alert-dismissible" role="alert">
+       <strong>Sukses! </strong>'.$this->session->flashdata('pesan');
+       echo '</div>';
+    }
+    ?>
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-header card-header-icon" data-background-color="blue">
@@ -6,54 +25,54 @@
                                 </div>
                                 <div class="card-content">
                                     <h4 class="card-title">Input Peminjaman Mobil</h4>
-                                    <form method="#" action="#">
-                                        <div class="form-group label-floating">
+                                    <?php echo form_open('permohonan/peminjaman')?>
+                                        <div class="form-group">
                                             <label class="control-label">Nama</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="nama_lengkap" class="form-control" value="<?= $data->nama_lengkap?>">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Noreg</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="noreg" class="form-control" value="<?= $data->noreg?>">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Tanggal</label>
-                                            <input type="text" class="form-control" value="10/05/2016">
+                                            <input type="text" name="tanggal_peminjaman" class="form-control" id="datepinjaman">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Jam</label>
-                                            <input type="text" class="form-control" value="05:09:26">
+                                            <input type="text" name="jam_peminjaman" class="form-control" id="timepinjaman">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Jenis Mobil</label>
-                                            <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Jenis Mobil">
+                                            <select class="selectpicker" name="jenis_mobil" data-style="select-with-transition" multiple title="Pilih Jenis Mobil">
                                                 <option disabled>Jenis Mobil</option>
-                                                <option value="2">Inova</option>
-                                                <option value="3">Truck</option>
+                                                <option value="Inova">Inova</option>
+                                                <option value="Truck">Truck</option>
                                             </select>
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Perkiraan jangka waktu pemakaian</label>
-                                            <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Perkiraan jangka waktu pemakaian">
+                                            <select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="Pilih Perkiraan jangka waktu pemakaian">
                                                 <option disabled>Perkiraan jangka waktu pemakaian</option>
-                                                <option value="1">24 jam</option>
-                                                <option value="2">06.00 - 18.00</option>
-                                                <option value="3">17.00 - 07.00</option>
+                                                <option value="24 jam">24 jam</option>
+                                                <option value="06.00 - 18.00">06.00 - 18.00</option>
+                                                <option value="17.00 - 07.00">17.00 - 07.00</option>
                                             </select>
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Keterangan</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="keterangan" class="form-control">
                                         </div>
-                                        <div class="form-group label-floating">
+                                        <div class="form-group">
                                             <label class="control-label">Pengemudi</label>
-                                            <select class="selectpicker" data-style="select-with-transition" multiple title="Pilih Pengemudi">
+                                            <select class="selectpicker" name="pengemudi" data-style="select-with-transition" multiple title="Pilih Pengemudi">
                                                 <option disabled>Pilih Pengemudi</option>
-                                                <option value="2">Pemohon </option>
-                                                <option value="3">Jupena Solihin</option>
+                                                <option value="Pemohon">Pemohon</option>
+                                                <option value="Jupena Solihin">Jupena Solihin</option>
                                             </select>
                                         </div>
                                         <button type="submit" class="btn btn-fill btn-primary">Submit</button>
-                                    </form>
+                                    <?php echo form_close()?>
                                 </div>
                             </div>
                         </div>
@@ -66,78 +85,51 @@
                                 <div class="card-content">
                                     <h4 class="card-title">Riwayat Tugas Lapangan</h4>
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <table class="table table-bordered table-striped table-hover table-condensed" role="grid">
                                             <thead class="text-primary">
+                                                <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Noreg</th>
                                                 <th>Tangggal</th>
                                                 <th>Jam</th>
-                                                <th>Keterangan</th>
+                                                <th>Lama Pinjam</th>
                                                 <th>Tujuan</th>
-                                                <th>Selesai</th>
-                                                <th>Kepulangan</th>
+                                                <th>Pengemudi</th>
+                                                <th>Status</th>
+                                                <th>Aksi</th>
                                             </thead>
                                             <tbody>
+                                            <?php 
+                                                    $no = 1;
+                                                    foreach ($peminjaman as $key => $value) {
+                                                    ?>
                                                 <tr>
-                                                    <td>Dakota Rice</td>
-                                                    <td>Niger</td>
-                                                    <td>Oud-Turnhout</td>
-                                                    <td class="text-primary">$36,738</td>
-                                                    <td>Dakota Rice</td>
-                                                    <td>Niger</td>
-                                                    <td>Oud-Turnhout</td>
-                                                    <td class="text-primary">$36,738</td>
+                                                    <td><?= $no++;?></td>
+                                                    <td><?= $value->nama_lengkap;?></td>
+                                                    <td><?= $value->noreg;?></td>
+                                                    <td class="text-primary"><?= $value->tanggal_peminjaman;?></td>
+                                                    <td class="text-primary"><?= $value->jam_peminjaman;?></td>
+                                                    <td><?= $value->jangka_waktu_pemakaian;?></td>
+                                                    <td><?= $value->keterangan;?></td>
+                                                    <td><?= $value->pengemudi;?></td>
+                                                    <td>
+                                                    <?php
+                                                                if($value->status == "0"){
+                                                                    echo '<span class="badge badge-default">Menunggu<br>
+                                                                    Verifikasi</span>';
+                                                                }else if($value->status == "1"){
+                                                                    echo '<span class="badge badge-success">Diterima</span>';
+                                                                }else if($value->status == "2"){
+                                                                    echo '<span class="badge badge-danger">Ditolak</span>';
+                                                                }
+                                                    ?>
+                                                    </td>
+                                                    <td>
+                                                            <button class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#edit<?= $value->id_peminjaman ?>"><i class="material-icons">edit</i></button>
+                                                            <button class="btn btn-danger btn-sm"   data-toggle="modal" data-target="#delete<?= $value->id_peminjaman?>"><i class="material-icons">delete</i></button>
+                                                            </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Minerva Hooper</td>
-                                                    <td>Curaçao</td>
-                                                    <td>Sinaai-Waas</td>
-                                                    <td class="text-primary">$23,789</td>
-                                                    <td>Minerva Hooper</td>
-                                                    <td>Curaçao</td>
-                                                    <td>Sinaai-Waas</td>
-                                                    <td class="text-primary">$23,789</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Sage Rodriguez</td>
-                                                    <td>Netherlands</td>
-                                                    <td>Baileux</td>
-                                                    <td class="text-primary">$56,142</td>
-                                                    <td>Sage Rodriguez</td>
-                                                    <td>Netherlands</td>
-                                                    <td>Baileux</td>
-                                                    <td class="text-primary">$56,142</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Philip Chaney</td>
-                                                    <td>Korea, South</td>
-                                                    <td>Overland Park</td>
-                                                    <td class="text-primary">$38,735</td>
-                                                    <td>Philip Chaney</td>
-                                                    <td>Korea, South</td>
-                                                    <td>Overland Park</td>
-                                                    <td class="text-primary">$38,735</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Doris Greene</td>
-                                                    <td>Malawi</td>
-                                                    <td>Feldkirchen in Kärnten</td>
-                                                    <td class="text-primary">$63,542</td>
-                                                    <td>Doris Greene</td>
-                                                    <td>Malawi</td>
-                                                    <td>Feldkirchen in Kärnten</td>
-                                                    <td class="text-primary">$63,542</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Mason Porter</td>
-                                                    <td>Chile</td>
-                                                    <td>Gloucester</td>
-                                                    <td class="text-primary">$78,615</td>
-                                                    <td>Mason Porter</td>
-                                                    <td>Chile</td>
-                                                    <td>Gloucester</td>
-                                                    <td class="text-primary">$78,615</td>
-                                                </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -145,3 +137,150 @@
                              </div>
                         </div>
                     </div>
+                           <!-- modal edit-->
+                           <?php foreach ($peminjaman as $key => $value) { ?>
+<div class="modal fade" id="edit<?= $value->id_peminjaman ?>">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"><b>Edit Peminjaman Mobil</b></h4>
+            </div>
+            <div class="modal-body">
+                    <?php 
+
+                        echo form_open('permohonan/edit_peminjaman/'.$value->id_peminjaman);
+                    ?>
+
+                  <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="nama_lengkap" value="<?= $value->nama_lengkap?>" class="form-control" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Noreg</label>
+                    <input type="text" name="noreg" value="<?= $value->noreg?>" class="form-control" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Tanggal</label>
+                    <input type="text" name="tanggal_peminjaman" value="<?= $value->tanggal_peminjaman?>" class="form-control" id="dialogpdateinjaman">
+                  </div>
+                  <div class="form-group">
+                    <label>Jam</label>
+                    <input type="text" name="jam_peminjaman" value="<?= $value->jam_peminjaman?>" class="form-control" id="dialogtimepinjaman">
+                  </div>
+                  <div class="form-group">
+                    <label>Jenis Mobil</label>
+                      <?php 
+                        if($value->jenis_mobil == "Inova"){
+                            echo '<select class="selectpicker" name="jenis_mobil" data-style="select-with-transition" multiple title="Inova">
+                            <option disabled>Jenis Cuti</option>
+                            <option value="Inova" selected>Inova</option>
+                            <option value="Truck">Truck</option>
+                        </select>';
+                        }else if($value->jenis_mobil == "Truck"){
+                            echo '<select class="selectpicker" name="jenis_mobil" data-style="select-with-transition" multiple title="Truck">
+                            <option disabled>Jenis Cuti</option>
+                            <option value="Inova">Inova</option>
+                            <option value="Truck" selected>Truck</option>
+                        </select>';
+                        }
+                      ?>
+                            
+                </div>
+
+                <div class="form-group">
+                    <label>Perkiraan jangka waktu pemakaian</label>
+                      <?php 
+                        if($value->jangka_waktu_pemakaian == "24 jam"){
+                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="24 jam">
+                            <option disabled>Jenis Cuti</option>
+                            <option value="24 jam" selected>Inova</option>
+                            <option value="06.00 - 18.00">06.00 - 18.00</option>
+                            <option value="17.00 - 07.00">17.00 - 07.00</option>
+                        </select>';
+                        }else if($value->jangka_waktu_pemakaian == "06.00 - 18.00"){
+                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="06.00 - 18.00">
+                            <option disabled>Jenis Cuti</option>
+                            <option value="24 jam">24 jam</option>
+                            <option value="06.00 - 18.00" selected>06.00 - 18.00</option>
+                            <option value="17.00 - 07.00">17.00 - 07.00</option>
+                        </select>';
+                        }else if($value->jangka_waktu_pemakaian == "17.00 - 07.00"){
+                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="17.00 - 07.00">
+                            <option disabled>Jenis Cuti</option>
+                            <option value="24 jam">24 jam</option>
+                            <option value="06.00 - 18.00">06.00 - 18.00</option>
+                            <option value="17.00 - 07.00" selected>17.00 - 07.00</option>
+                        </select>';
+                        }
+                      ?>
+                            
+                </div>
+                  
+                  <div class="form-group">
+                    <label>Keterangan</label>
+                    <input type="text" name="keterangan" value="<?= $value->keterangan?>" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Pengemudi</label>
+                      <?php 
+                        if($value->pengemudi == "Pemohon"){
+                            echo '<select class="selectpicker" name="pengemudi" data-style="select-with-transition" multiple title="Pemohon">
+                            <option disabled>Jenis Cuti</option>
+                            <option value="Pemohon" selected>Pemohon</option>
+                            <option value="Jupena Solihin">Jupena Solihin</option>
+                        </select>';
+                        }else if($value->pengemudi == "Jupena Solihin"){
+                            echo '<select class="selectpicker" name="pengemudi" data-style="select-with-transition" multiple title="Jupena Solihin">
+                            <option disabled>Jenis Cuti</option>
+                            <option value="Pemohon">Pemohon</option>
+                            <option value="Jupena Solihin" selected>Jupena Solihin</option>
+                        </select>';
+                        }
+                      ?>
+                            
+                </div>
+                  
+
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+            <?php
+                echo form_close();
+            ?>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+      <?php } ?>
+
+
+                    
+      <?php foreach ($peminjaman as $key => $value) { ?>
+<div class="modal fade" id="delete<?= $value->id_peminjaman ?>">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Hapus Peminjaman <?= $value->keterangan ?></h4>
+            </div>
+            <div class="modal-body">
+                 
+                <h5>Apakah anda ingin menghapus data ini...?</h5>
+
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Tutup</button>
+              <a href="<?= base_url('permohonan/delete_peminjaman/'.$value->id_peminjaman) ?>"><button class="btn btn-primary">Hapus</button</a>
+            </div>
+            
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
+      <?php } ?>  

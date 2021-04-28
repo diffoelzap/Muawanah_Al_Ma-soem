@@ -125,7 +125,7 @@
                                         <i class="material-icons">work</i>
                                     </div>
                                         <div class="card-content">
-                                            <h4 class="card-title">Input Peminjaman Mobil</h4>
+                                            <h4 class="card-title">Input Permohonan Cuti</h4>
                                             <?php echo form_open('permohonan/cuti') ?>
                                                 <div class="form-group">
                                                     <label class="control-label">Nama</label>
@@ -149,11 +149,11 @@
                                                 </div>
                                                 <div class="form-group">
                                                         <label class="control-label">Tanggal awal cuti</label>
-                                                        <input type="text" name="tanggal_awal" class="datecuti form-control">
+                                                        <input type="text"  name="tanggal_awal" class="dateawaltanggal form-control">
                                                 </div>
                                                 <div class="form-group">
                                                         <label class="control-label">Tanggal akhir Cuti</label>
-                                                        <input type="text" name="tanggal_akhir" class="datecuti form-control">
+                                                        <input type="text"  name="tanggal_akhir" class="dateakhirtanggal form-control">
                                                     </div>
                                                
                                                 <div class="form-group">
@@ -197,7 +197,7 @@
                                                             <td><?= $value->noreg ?></td>
                                                             <td><?= $value->jenis_cuti?></td>
                                                             <td class="text-primary"><?php echo date("d/m/Y",strtotime($value->tanggal_awal));?> - <?php echo date("d/m/Y",strtotime($value->tanggal_akhir));?></td>
-                                                            <td><?= $value->lama_cuti?></td>
+                                                            <td><?= $value->lama_cuti?> / Hari</td>
                                                             <td><?= $value->keterangan?></td>
                                                             <td>
                                                             <?php
@@ -316,11 +316,11 @@
                 </div>
                   <div class="form-group">
                     <label>Tanggal Awal</label>
-                    <input type="text" name="tanggal_awal" value="<?= $value->tanggal_awal?>" class="datecuti form-control">
+                    <input type="text" name="tanggal_awal" value="<?= $value->tanggal_awal?>" class="form-control" readonly>
                   </div>
                   <div class="form-group">
                     <label>Tanggal Akhir</label>
-                    <input type="text" name="tanggal_akhir" value="<?= $value->tanggal_akhir?>" class="datecuti form-control">
+                    <input type="text" name="tanggal_akhir" value="<?= $value->tanggal_akhir?>" class="form-control" readonly>
                   </div>
                   <div class="form-group">
                     <label>Tempat Harian</label>
