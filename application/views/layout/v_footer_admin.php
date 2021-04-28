@@ -123,6 +123,13 @@
 
     });
 </script>
+<script>
+     window.setTimeout(function() {
+        $(".alert").fadeTo(500,0).slideUp(500,function() {
+            $(this).remove();
+            });
+    },2000)
+</script>
 
 
 <!-- Mirrored from demos.creative-tim.com/material-dashboard-pro/examples/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2017 21:32:16 GMT -->

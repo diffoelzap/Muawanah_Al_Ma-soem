@@ -37,6 +37,30 @@ class M_admin extends CI_Model {
         return $this->db->get()->result();
         
     }
+    public function get_data_cuti()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_cuti');
+        $this->db->order_by('id_cuti', 'desc');
+        return $this->db->get()->result();
+    }
+    public function get_data_peminjaman()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_peminjaman');
+        $this->db->order_by('id_peminjaman', 'desc');
+        return $this->db->get()->result();
+    }
+    public function edit_cuti($data)
+    {
+        $this->db->where('id_cuti', $data['id_cuti']);
+        $this->db->update('tbl_cuti', $data);
+    }
+    public function edit_pinjam($data)
+    {
+        $this->db->where('id_peminjaman', $data['id_peminjaman']);
+        $this->db->update('tbl_peminjaman', $data);
+    }
 }
 
 /* End of file ModelName.php */

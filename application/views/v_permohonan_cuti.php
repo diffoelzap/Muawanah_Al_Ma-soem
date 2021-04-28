@@ -205,15 +205,20 @@
                                                                     echo '<span class="badge badge-default">Menunggu<br>
                                                                     Verifikasi</span>';
                                                                 }else if($value->status == "1"){
-                                                                    echo '<span class="badge badge-success">Diterima</span>';
+                                                                    echo '<span class="label label-success">Diterima</span>';
                                                                 }else if($value->status == "2"){
-                                                                    echo '<span class="badge badge-danger">Ditolak</span>';
+                                                                    echo '<span class="label label-danger">Ditolak</span>';
                                                                 }
                                                             ?>
                                                             </td>
                                                             <td>
-                                                            <button class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#edit<?= $value->id_cuti ?>"><i class="material-icons">edit</i></button>
-                                                            <button class="btn btn-danger btn-sm"   data-toggle="modal" data-target="#delete<?= $value->id_cuti?>"><i class="material-icons">delete</i></button>
+                                                            <?php 
+                                                              if($value->status == 0){
+                                                                echo '<button class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#edit'.$value->id_cuti.'"><i class="material-icons">edit</i></button>
+                                                                <button class="btn btn-danger btn-sm"   data-toggle="modal" data-target="#delete'.$value->id_cuti.'"><i class="material-icons">delete</i></button>';
+                                                              }
+                                                            ?>
+                                                            
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
