@@ -116,6 +116,7 @@ class Auth extends CI_Controller {
                                     'rumah'   => $this->input->post('rumah'),
                                     'tinggal'   => $this->input->post('tinggal'),
                                     'foto_profil'      => $upload_data['uploads']['file_name'],
+                                   
                                             
                         );
                         $this->m_auth->add($data);
@@ -223,6 +224,7 @@ class Auth extends CI_Controller {
                                     'rumah'   => $this->input->post('rumah'),
                                     'tinggal'   => $this->input->post('tinggal'),
                                     'foto_profil'      => $upload_data['uploads']['file_name'],
+                                   
                                             
                         );
                         $this->m_auth->edit($data);
@@ -254,6 +256,7 @@ class Auth extends CI_Controller {
                         'golongan'   => $this->input->post('golongan'),
                         'rumah'   => $this->input->post('rumah'),
                         'tinggal'   => $this->input->post('tinggal'),
+                     
                                 
                         );
                         $this->m_auth->edit($data);
