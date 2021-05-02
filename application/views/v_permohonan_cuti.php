@@ -137,8 +137,8 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="control-label">Jenis Cuti</label>
-                                                    <select class="selectpicker" name="jenis_cuti" data-style="select-with-transition" multiple title="Pilih Jenis Cuti">
-                                                        <option disabled>Jenis Cuti</option>
+                                                    <select class="selectpicker" name="jenis_cuti" data-style="select-with-transition">
+                                                        <option disabled selected>Jenis Cuti</option>
                                                         <option value="Menikah">Menikah</option>
                                                         <option value="Melahirkan">Melahirkan</option>
                                                         <option value="Menikah dan cuti tahunan">Menikah dan cuti tahunan</option>
@@ -186,6 +186,7 @@
                                                         <th>Status</th>
                                                         <th>Aksi</th>
                                                     </thead>
+                                                   
                                                     <tbody>
                                                     <?php 
                                                     $no = 1;
@@ -256,8 +257,8 @@
                     <label>Kategori</label>
                       <?php 
                         if($value->jenis_cuti == "Menikah"){
-                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition" multiple title="Menikah">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Menikah" selected>Menikah</option>
                             <option value="Melahirkan">Melahirkan</option>
                             <option value="Menikah dan cuti tahunan">Menikah dan cuti tahunan</option>
@@ -266,8 +267,8 @@
                             <option value="Umrah">Umrah</option>
                         </select>';
                         }else if($value->jenis_cuti == "Melahirkan"){
-                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition" multiple title="Melahirkan">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Menikah">Menikah</option>
                             <option value="Melahirkan" selected>Melahirkan</option>
                             <option value="Menikah dan cuti tahunan">Menikah dan cuti tahunan</option>
@@ -276,8 +277,8 @@
                             <option value="Umrah">Umrah</option>
                         </select>';
                         }else if($value->jenis_cuti == "Menikah dan cuti tahunan"){
-                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition" multiple title="Menikah dan cuti tahunan">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Menikah">Menikah</option>
                             <option value="Melahirkan">Melahirkan</option>
                             <option value="Menikah dan cuti tahunan" selected>Menikah dan cuti tahunan</option>
@@ -286,8 +287,8 @@
                             <option value="Umrah">Umrah</option>
                         </select>';
                         }else if($value->jenis_cuti == "Melahirkan"){
-                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition" multiple title="Melahirkan">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Menikah">Menikah</option>
                             <option value="Melahirkan">Melahirkan</option>
                             <option value="Menikah dan cuti tahunan">Menikah dan cuti tahunan</option>
@@ -296,8 +297,8 @@
                             <option value="Umrah">Umrah</option>
                         </select>';
                         }else if($value->jenis_cuti == "Haji"){
-                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition" multiple title="Haji">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Menikah">Menikah</option>
                             <option value="Melahirkan">Melahirkan</option>
                             <option value="Menikah dan cuti tahunan">Menikah dan cuti tahunan</option>
@@ -306,8 +307,8 @@
                             <option value="Umrah">Umrah</option>
                         </select>';
                         }else if($value->jenis_cuti == "Umrah"){
-                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition" multiple title="Umrah">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_cuti" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Menikah">Menikah</option>
                             <option value="Melahirkan">Melahirkan</option>
                             <option value="Menikah dan cuti tahunan">Menikah dan cuti tahunan</option>

@@ -108,15 +108,15 @@
                                                                     <?php 
                                                                         if($data->jenis_kelamin == "Laki - Laki")
                                                                         {
-                                                                            echo '<select class="selectpicker" name="jenis_kelamin" data-style="select-with-transition" multiple title="Laki - Laki">
-                                                                            <option disabled>Pilih Jenis Kelamin</option>
+                                                                            echo '<select class="selectpicker" name="jenis_kelamin" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Jenis Kelamin</option>
                                                                             <option value="Laki - Laki" selected>Laki - Laki</option>
                                                                             <option value="Perempuan">Perempuan</option>
                                                                             
                                                                             </select>';
                                                                         }else if($data->jenis_kelamin == "Perempuan"){
-                                                                            echo '<select class="selectpicker" name="jenis_kelamin" data-style="select-with-transition" multiple title="Perempuan">
-                                                                            <option disabled>Pilih Jenis Kelamin</option>
+                                                                            echo '<select class="selectpicker" name="jenis_kelamin" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Jenis Kelamin</option>
                                                                             <option value="Laki - Laki">Laki - Laki</option>
                                                                             <option value="Perempuan" selected>Perempuan</option>
                                                                             </select>';
@@ -130,32 +130,32 @@
                                                                     <?php 
                                                                         if($data->agama == "Islam")
                                                                         {
-                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition" multiple title="Islam">
-                                                                            <option disabled>Pilih Agama</option>
+                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Agama</option>
                                                                             <option value="Islam" selected>Islam</option>
                                                                             <option value="Kristen">Kristen</option>
                                                                             <option value="Hindu">Hindu</option>
                                                                             <option value="Budha">Budha</option>
                                                                             </select>';
                                                                         }else if($data->agama == "Kristen"){
-                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition" multiple title="Kristen">
-                                                                            <option disabled>Pilih Agama</option>
+                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Agama</option>
                                                                             <option value="Islam">Islam</option>
                                                                             <option value="Kristen" selected>Kristen</option>
                                                                             <option value="Hindu">Hindu</option>
                                                                             <option value="Budha">Budha</option>
                                                                             </select>';
                                                                         }else if($data->agama == "Hindu"){
-                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition" multiple title="Hindu">
-                                                                            <option disabled>Pilih Agama</option>
+                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Agama</option>
                                                                             <option value="Islam">Islam</option>
                                                                             <option value="Kristen">Kristen</option>
                                                                             <option value="Hindu" selected>Hindu</option>
                                                                             <option value="Budha">Budha</option>
                                                                             </select>';
                                                                         }else if($data->agama == "Budha"){
-                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition" multiple title="Budha">
-                                                                            <option disabled>Pilih Agama</option>
+                                                                            echo '<select class="selectpicker" name="agama" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Agama</option>
                                                                             <option value="Islam">Islam</option>
                                                                             <option value="Kristen">Kristen</option>
                                                                             <option value="Hindu">Hindu</option>
@@ -174,15 +174,15 @@
                                                                     <?php 
                                                                         if($data->suku_bangsa == "WNI")
                                                                         {
-                                                                            echo '<select class="selectpicker" name="suku_bangsa" data-style="select-with-transition" multiple title="WNI">
-                                                                            <option disabled>Pilih Suku Bangsa</option>
+                                                                            echo '<select class="selectpicker" name="suku_bangsa" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Suku Bangsa</option>
                                                                             <option value="WNI" selected>WNI</option>
                                                                             <option value="Perempuan">WNA</option>
                                                                             
                                                                             </select>';
                                                                         }else if($data->suku_bangsa  == "WNI"){
-                                                                            echo '<select class="selectpicker" name="suku_bangsa" data-style="select-with-transition" multiple title="WNA">
-                                                                            <option disabled>Pilih Suku Bangsa</option>
+                                                                            echo '<select class="selectpicker" name="suku_bangsa" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Suku Bangsa</option>
                                                                             <option value="WNI">WNI</option>
                                                                             <option value="WNA" selected>WNA</option>
                                                                             </select>';
@@ -196,15 +196,15 @@
                                                                     <?php 
                                                                         if($data->status_perkawinan == "Menikah")
                                                                         {
-                                                                            echo '<select class="selectpicker" name="status_perkawinan" data-style="select-with-transition" multiple title="Menikah">
-                                                                            <option disabled>Pilih Status Perkawinan</option>
+                                                                            echo '<select class="selectpicker" name="status_perkawinan" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Status Perkawinan</option>
                                                                             <option value="Menikah" selected>Menikah</option>
                                                                             <option value="Belum Menikah">Belum Menikah</option>
                                                                             
                                                                             </select>';
                                                                         }else if($data->status_perkawinan == "Belum Menikah"){
-                                                                            echo '<select class="selectpicker" name="status_perkawinan" data-style="select-with-transition" multiple title="Belum Menikah">
-                                                                            <option disabled>Pilih Status Perkawinan</option>
+                                                                            echo '<select class="selectpicker" name="status_perkawinan" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Status Perkawinan</option>
                                                                             <option value="Menikah">Menikah</option>
                                                                             <option value="Belum Menikah" selected>Belum Menikah</option>
                                                                             </select>';
@@ -218,15 +218,15 @@
                                                                     <?php 
                                                                         if($data->status_karyawan == "Tetap")
                                                                         {
-                                                                            echo '<select class="selectpicker" name="status_karyawan" data-style="select-with-transition" multiple title="Tetap">
-                                                                            <option disabled>Pilih Status Karyawan</option>
+                                                                            echo '<select class="selectpicker" name="status_karyawan" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Status Karyawan</option>
                                                                             <option value="Tetap" selected>Tetap</option>
                                                                             <option value="Sementara">Sementara</option>
                                                                             
                                                                             </select>';
                                                                         }else if($data->status_karyawan == "Sementara"){
-                                                                            echo '<select class="selectpicker" name="status_karyawan" data-style="select-with-transition" multiple title="Sementara">
-                                                                            <option disabled>Pilih Status Karyawan</option>
+                                                                            echo '<select class="selectpicker" name="status_karyawan" data-style="select-with-transition">
+                                                                            <option disabled selected>Pilih Status Karyawan</option>
                                                                             <option value="Tetap">Tetap</option>
                                                                             <option value="Sementara" selected>Sementara</option>
                                                                             </select>';

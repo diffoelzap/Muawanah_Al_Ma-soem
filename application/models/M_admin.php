@@ -25,7 +25,8 @@ class M_admin extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('tbl_tugas_harian');    
-        $this->db->order_by('id_tugas_harian', 'desc');
+        $this->db->order_by('tanggal_harian', 'desc');
+        $this->db->order_by('jam_harian', 'desc');
         return $this->db->get()->result();
         
     }
@@ -33,7 +34,8 @@ class M_admin extends CI_Model {
     {
         $this->db->select('*');
         $this->db->from('tbl_tugas_lapangan');    
-        $this->db->order_by('id_tugas_lapangan', 'desc');
+        $this->db->order_by('tanggal_lapangan', 'desc');
+        $this->db->order_by('jam_lapangan', 'desc');
         return $this->db->get()->result();
         
     }

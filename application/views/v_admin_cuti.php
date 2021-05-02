@@ -62,12 +62,13 @@
                                                             <td class="td-actions text-left">
                                                                 <?php 
                                                                     if($value->status == "0"){
-                                                                        echo '<a href="'.base_url('admin/terima_cuti/'.$value->id_cuti).'" rel="tooltip" class="btn btn-success">
+                                                                        echo '<a href="'.base_url('admin/terima_cuti/'.$value->id_cuti).'" rel="tooltip" class="btn btn-success" id="swal_diterima">
                                                                         <i class="material-icons">done</i>
                                                                     </a>
-                                                                    <a href="'.base_url('admin/tolak_cuti/'.$value->id_cuti).'" rel="tooltip" class="btn btn-danger">
+                                                                    <a href="'.base_url('admin/tolak_cuti/'.$value->id_cuti).'" rel="tooltip" class="btn btn-danger" id="swal_ditolak">
                                                                         <i class="material-icons">close</i>
                                                                     </a>';
+                                                                    
                                                                     }
                                                                 ?>
                                                               
@@ -81,3 +82,4 @@
                                     </div>
                                 </div>
                             </div>
+                           

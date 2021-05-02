@@ -195,7 +195,8 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                 <label class="control-label">Jenis Kelamin</label>
-                                                    <select class="selectpicker" name="jenis_kelamin" data-style="select-with-transition" multiple title="Pilih Jenis Kelamin" required>
+                                                    <select class="selectpicker" name="jenis_kelamin" data-style="select-with-transition"  required>
+                                                        <option disabled selected>Pilih Jenis Kelamin</option>
                                                         <option value="Laki - Laki">Laki - Laki</option>
                                                         <option value="Perempuan">Perempuan</option>
                                                       </select>
@@ -204,7 +205,8 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label">Agama</label>
-                                                    <select class="selectpicker" name="agama" data-style="select-with-transition" multiple title="Pilih Agama" required>
+                                                    <select class="selectpicker" name="agama" data-style="select-with-transition" required>
+                                                        <option disabled selected>Pilih Agama</option>
                                                         <option value="Islam">Islam</option>
                                                         <option value="Kristen">Kristen</option>
                                                         <option value="Hindu">Hindu</option>
@@ -217,8 +219,8 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Suku Bangsa</label>
-                                                    <select class="selectpicker" name="suku_bangsa" data-style="select-with-transition" multiple title="Pilih Suku bangsa" required>
-                                                        <option disabled>Pilih Suku bangsa</option>
+                                                    <select class="selectpicker" name="suku_bangsa" data-style="select-with-transition" required>
+                                                        <option disabled selected>Pilih Suku bangsa</option>
                                                         <option value="WNA">WNA</option>
                                                         <option value="WNI">WNI</option>
                                                       </select>
@@ -227,7 +229,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Status Perkawinan</label>
-                                                    <select class="selectpicker" name="status_perkawinan" data-style="select-with-transition" multiple title="Pilih Status Perkawinan" required>
+                                                    <select class="selectpicker" name="status_perkawinan" data-style="select-with-transition" required>
                                                         <option disabled>Pilih Status Perkawinan</option>
                                                         <option value="Menikah">Menikah</option>
                                                         <option value="Belum Menikah">Belum Menikah</option>
@@ -237,7 +239,7 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="control-label">Status Karyawan</label>
-                                                    <select class="selectpicker" name="status_karyawan" data-style="select-with-transition" multiple title="Pilih Status karyawan" required>
+                                                    <select class="selectpicker" name="status_karyawan" data-style="select-with-transition" required>
                                                         <option disabled>Pilih Status karyawan</option>
                                                         <option value="Tetap">Tetap</option>
                                                         <option value="Sementara">Sementara</option>

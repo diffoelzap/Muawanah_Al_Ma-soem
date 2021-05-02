@@ -19,6 +19,16 @@ class M_harian extends CI_Model {
         return $this->db->get()->result();
         
     }
+    public function get_json($noreg)
+    {
+        
+        $this->db->select('*');
+        $this->db->from('tbl_tugas_harian');
+        $this->db->where('noreg',$noreg);
+        $this->db->order_by('id_tugas_harian', 'desc');
+        return $this->db->get()->result_array();
+        
+    }
     public function edit($data)
     {
         $this->db->where('id_tugas_harian', $data['id_tugas_harian']);

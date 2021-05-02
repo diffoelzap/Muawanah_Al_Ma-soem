@@ -77,6 +77,12 @@
                             <p>Reseller</p>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('admin/logout_admin')?>">
+                            <i class="material-icons">exit_to_app</i>
+                            <p>Logout</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

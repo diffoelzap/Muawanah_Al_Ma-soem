@@ -42,7 +42,7 @@ class Admin extends CI_Controller {
         $this->load->view('v_login_admin', $data, FALSE);
         
     }
-    public function logout_karyawan()
+    public function logout_admin()
     {
         $this->admin_login->logout();    
     }

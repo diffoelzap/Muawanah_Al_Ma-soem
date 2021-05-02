@@ -41,6 +41,12 @@
     <link href="<?= base_url() ?>template/karyawan/assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="<?= base_url() ?>template/karyawan/assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="<?= base_url() ?>template/karyawan/assets/css/google-roboto-300-700.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>template/karyawan/assets/css/google-roboto-300-700.css" rel="stylesheet">
 
+    <!--   Core JS Files   -->
+<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>template/karyawan/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>template/karyawan/assets/js/material.min.js" type="text/javascript"></script>
+<script src="<?= base_url() ?>template/karyawan/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
 </head>

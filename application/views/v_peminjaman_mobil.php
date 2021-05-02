@@ -44,16 +44,16 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Jenis Mobil</label>
-                                            <select class="selectpicker" name="jenis_mobil" data-style="select-with-transition" multiple title="Pilih Jenis Mobil">
-                                                <option disabled>Jenis Mobil</option>
+                                            <select class="selectpicker" name="jenis_mobil" data-style="select-with-transition">
+                                                <option disabled selected>Jenis Mobil</option>
                                                 <option value="Inova">Inova</option>
                                                 <option value="Truck">Truck</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Perkiraan jangka waktu pemakaian</label>
-                                            <select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="Pilih Perkiraan jangka waktu pemakaian">
-                                                <option disabled>Perkiraan jangka waktu pemakaian</option>
+                                            <select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition">
+                                                <option disabled selected>Perkiraan jangka waktu pemakaian</option>
                                                 <option value="24 jam">24 jam</option>
                                                 <option value="06.00 - 18.00">06.00 - 18.00</option>
                                                 <option value="17.00 - 07.00">17.00 - 07.00</option>
@@ -65,8 +65,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Pengemudi</label>
-                                            <select class="selectpicker" name="pengemudi" data-style="select-with-transition" multiple title="Pilih Pengemudi">
-                                                <option disabled>Pilih Pengemudi</option>
+                                            <select class="selectpicker" name="pengemudi" data-style="select-with-transition">
+                                                <option disabled selected>Pilih Pengemudi</option>
                                                 <option value="Pemohon">Pemohon</option>
                                                 <option value="Jupena Solihin">Jupena Solihin</option>
                                             </select>
@@ -171,14 +171,14 @@
                     <label>Jenis Mobil</label>
                       <?php 
                         if($value->jenis_mobil == "Inova"){
-                            echo '<select class="selectpicker" name="jenis_mobil" data-style="select-with-transition" multiple title="Inova">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_mobil" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Inova" selected>Inova</option>
                             <option value="Truck">Truck</option>
                         </select>';
                         }else if($value->jenis_mobil == "Truck"){
-                            echo '<select class="selectpicker" name="jenis_mobil" data-style="select-with-transition" multiple title="Truck">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jenis_mobil" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Inova">Inova</option>
                             <option value="Truck" selected>Truck</option>
                         </select>';
@@ -191,22 +191,22 @@
                     <label>Perkiraan jangka waktu pemakaian</label>
                       <?php 
                         if($value->jangka_waktu_pemakaian == "24 jam"){
-                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="24 jam">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="24 jam" selected>Inova</option>
                             <option value="06.00 - 18.00">06.00 - 18.00</option>
                             <option value="17.00 - 07.00">17.00 - 07.00</option>
                         </select>';
                         }else if($value->jangka_waktu_pemakaian == "06.00 - 18.00"){
-                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="06.00 - 18.00">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="24 jam">24 jam</option>
                             <option value="06.00 - 18.00" selected>06.00 - 18.00</option>
                             <option value="17.00 - 07.00">17.00 - 07.00</option>
                         </select>';
                         }else if($value->jangka_waktu_pemakaian == "17.00 - 07.00"){
-                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition" multiple title="17.00 - 07.00">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="jangka_waktu_pemakaian" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="24 jam">24 jam</option>
                             <option value="06.00 - 18.00">06.00 - 18.00</option>
                             <option value="17.00 - 07.00" selected>17.00 - 07.00</option>
@@ -225,14 +225,14 @@
                     <label>Pengemudi</label>
                       <?php 
                         if($value->pengemudi == "Pemohon"){
-                            echo '<select class="selectpicker" name="pengemudi" data-style="select-with-transition" multiple title="Pemohon">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="pengemudi" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Pemohon" selected>Pemohon</option>
                             <option value="Jupena Solihin">Jupena Solihin</option>
                         </select>';
                         }else if($value->pengemudi == "Jupena Solihin"){
-                            echo '<select class="selectpicker" name="pengemudi" data-style="select-with-transition" multiple title="Jupena Solihin">
-                            <option disabled>Jenis Cuti</option>
+                            echo '<select class="selectpicker" name="pengemudi" data-style="select-with-transition">
+                            <option disabled selected>Jenis Cuti</option>
                             <option value="Pemohon">Pemohon</option>
                             <option value="Jupena Solihin" selected>Jupena Solihin</option>
                         </select>';

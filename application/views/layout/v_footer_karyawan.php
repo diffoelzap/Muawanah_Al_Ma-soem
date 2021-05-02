@@ -40,12 +40,7 @@
     </div>
 </body>
 
-<!--   Core JS Files   -->
-<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/material.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+
 
 
 <!-- Forms Validations Plugin -->
@@ -87,6 +82,8 @@
 <script src="<?= base_url() ?>template/karyawan/assets/js/material-dashboard.js"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?= base_url() ?>template/karyawan/assets/js/demo.js"></script>
+
+    
 <script>
   $(function () {
     $("#example1").DataTable({

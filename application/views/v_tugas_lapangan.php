@@ -47,8 +47,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Keterangan</label>
-                                            <select class="selectpicker" name="keterangan" data-style="select-with-transition" multiple title="Pilih Keterangan">
-                                                <option disabled>Keterangan</option>
+                                            <select class="selectpicker" name="keterangan" data-style="select-with-transition">
+                                                <option disabled selected>Keterangan</option>
                                                 <option value="Tugas ke lapangan dari kantor">Tugas ke lapangan dari kantor</option>
                                                 <option value="Tugas ke lapangan langsung dari rumah">Tugas ke lapangan langsung dari rumah</option>
                                             </select>
@@ -63,8 +63,8 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label">Kepulangan</label>
-                                            <select class="selectpicker" name="kepulangan" data-style="select-with-transition" multiple title="Pilih Kepulangan">
-                                                <option disabled>Kepulangan</option>
+                                            <select class="selectpicker" name="kepulangan" data-style="select-with-transition">
+                                                <option disabled selected>Kepulangan</option>
                                                 <option value="Ke kantor lagi">Ke kantor lagi</option>
                                                 <option value="Langsung pulang rumah">Langsung pulang rumah</option>
                                             </select>
@@ -159,14 +159,14 @@
                     <label>Keterangan</label>
                       <?php 
                         if($value->keterangan == "Tugas ke lapangan dari kantor"){
-                            echo '<select class="selectpicker" name="keterangan" data-style="select-with-transition" multiple title="Tugas ke lapangan dari kantor">
-                            <option disabled>Keterangan</option>
+                            echo '<select class="selectpicker" name="keterangan" data-style="select-with-transition">
+                            <option disabled selected>Keterangan</option>
                             <option value="Tugas ke lapangan dari kantor" selected>Tugas ke lapangan dari kantor</option>
                             <option value="Tugas ke lapangan langsung dari rumah">Tugas ke lapangan langsung dari rumah</option>
                         </select>';
                         }else if($value->keterangan == "Tugas ke lapangan langsung dari rumah"){
-                            echo '<select class="selectpicker" name="keterangan" data-style="select-with-transition" multiple title="Tugas ke lapangan langsung dari rumah">
-                            <option disabled>Keterangan</option>
+                            echo '<select class="selectpicker" name="keterangan" data-style="select-with-transition">
+                            <option disabled selected>Keterangan</option>
                             <option value="Tugas ke lapangan dari kantor">Tugas ke lapangan dari kantor</option>
                             <option value="Tugas ke lapangan langsung dari rumah"  selected>Tugas ke lapangan langsung dari rumah</option>
                         </select>';
@@ -186,14 +186,14 @@
                     <label>Kepulangan</label>
                     <?php 
                         if($value->kepulangan == "Ke kantor lagi"){
-                            echo '<select class="selectpicker" name="kepulangan" data-style="select-with-transition" multiple title="Ke kantor lagi">
-                            <option disabled>Kepulangan</option>
+                            echo '<select class="selectpicker" name="kepulangan" data-style="select-with-transition">
+                            <option disabled selected>Kepulangan</option>
                             <option value="Ke kantor lagi" selected>Ke kantor lagi</option>
                             <option value="Langsung pulang rumah">Langsung pulang rumah</option>
                         </select>';
                         }else if($value->kepulangan == "Langsung pulang rumah"){
-                            echo '<select class="selectpicker" name="kepulangan" data-style="select-with-transition" multiple title="Langsung pulang rumah">
-                            <option disabled>Kepulangan</option>
+                            echo '<select class="selectpicker" name="kepulangan" data-style="select-with-transition">
+                            <option disabled selected>Kepulangan</option>
                             <option value="Ke kantor lagi">Ke kantor lagi</option>
                             <option value="Langsung pulang rumah"  selected>Langsung pulang rumah</option>
                         </select>';

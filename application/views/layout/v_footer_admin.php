@@ -39,7 +39,9 @@
         </div>
     </div>
 </body>
-<!--   Core JS Files   -->
+
+
+
 <script src="<?= base_url() ?>template/karyawan/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>template/karyawan/assets/js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="<?= base_url() ?>template/karyawan/assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -70,7 +72,9 @@
 <!--  DataTables.net Plugin    -->
 <script src="<?= base_url() ?>template/karyawan/assets/js/jquery.datatables.js"></script>
 <!-- Sweet Alert 2 plugin -->
-<script src="<?= base_url() ?>template/karyawan/assets/js/sweetalert2.js"></script>
+
+    <!--   Core JS Files   -->
+    <script src="<?= base_url() ?>template/karyawan/assets/js/sweetalert2/sweetalert2.min.js"></script>
 <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
 <script src="<?= base_url() ?>template/karyawan/assets/js/jasny-bootstrap.min.js"></script>
 <!--  Full Calendar Plugin    -->
@@ -81,6 +85,8 @@
 <script src="<?= base_url() ?>template/karyawan/assets/js/material-dashboard.js"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?= base_url() ?>template/karyawan/assets/js/demo.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+
 <script type="text/javascript">
     $(document).ready(function() {
 
