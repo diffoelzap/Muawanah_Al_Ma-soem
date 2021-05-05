@@ -118,7 +118,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-	height: 100px;
+	height: 70px;
 	transition: all 0.5s;
 	z-index: 997;
 	transition: all 0.5s;
@@ -133,7 +133,6 @@ h6 {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	color: #384046;
-
 }
 
 #header .logo h1 a,
@@ -142,11 +141,6 @@ h6 {
 	text-decoration: none;
 }
 
-#header .logo img {
-	max-height: 40px;
-	margin-top: 30px;
-
-}
 
 /*--------------------------------------------------------------
 # Header Social Links
@@ -177,6 +171,42 @@ h6 {
 	}
 }
 
+/* #header {
+	height: 100px;
+	transition: all 0.5s;
+	z-index: 997;
+	transition: all 0.5s;
+	background: #fff;
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#header .logo h1 {
+	font-size: 28px;
+	margin: 0;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #384046;
+
+}
+
+#header .logo h1 a,
+#header .logo h1 a:hover {
+	color: #384046;
+	text-decoration: none;
+}
+
+#header .logo img {
+	max-height: 40px;
+	margin-top: 30px;
+
+} */
+
+/*--------------------------------------------------------------
+# Header Social Links
+--------------------------------------------------------------*/
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -197,18 +227,16 @@ h6 {
 
 .navbar li {
 	position: relative;
-	padding-top: 30px;
 }
 
 .navbar a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px 0 10px 10px;
-	font-family: "Poppins", sans-serif;
-	font-size: 16px;
+	padding: 10px 0 10px 30px;
+	font-size: 13px;
 	font-weight: 500;
-	color: #4f5a62;
+	color: #000000;
 	white-space: nowrap;
 	transition: 0.3s;
 }
@@ -421,11 +449,7 @@ h6 {
 	bottom: 0;
 }
 
-#hero .carousel-item::before {
-	content: '';
-	background-color: rgba(12, 13, 14, 0.8);
-	opacity: 0.5;
-}
+
 
 #hero .carousel-container {
 	display: flex;
@@ -1228,7 +1252,7 @@ section {
 	color: #fff;
 }
 
-.team .member .social {
+.team .member . {
 	position: absolute;
 	left: 0;
 	bottom: -38px;
@@ -1547,7 +1571,7 @@ section {
 #footer .footer-top .social-links a {
 	font-size: 16px;
 	display: inline-block;
-	background: #394047;
+	background: #7a8188;
 	color: #fff;
 	line-height: 1;
 	padding: 10px 0;
