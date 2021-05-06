@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>template/karyawan/assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="<?= base_url() ?>template/karyawan/assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Website Karyawan</title>
+    <title>Website Admin</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Canonical SEO -->
@@ -41,12 +41,6 @@
     <link href="<?= base_url() ?>template/karyawan/assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="<?= base_url() ?>template/karyawan/assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="<?= base_url() ?>template/karyawan/assets/css/google-roboto-300-700.css" rel="stylesheet">
+    <link href="<?= base_url() ?>template/karyawan/assets/css/google-roboto-300-700.css" rel="stylesheet" />
 
-    <!--   Core JS Files   -->
-<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/material.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
 </head>

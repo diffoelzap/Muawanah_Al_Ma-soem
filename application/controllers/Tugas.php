@@ -14,7 +14,6 @@ class Tugas extends CI_Controller {
         
         
     }
-    
     public function harian()
     {
         

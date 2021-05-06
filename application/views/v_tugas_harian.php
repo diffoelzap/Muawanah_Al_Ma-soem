@@ -47,8 +47,8 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label">Kategori</label>
-                            <select class="selectpicker" name="kategori_tugas" data-style="select-with-transition" multiple title="Pilih Kategori Tugas">
-                                <option disabled>Kategori Tugas</option>
+                            <select class="selectpicker" name="kategori_tugas" data-style="select-with-transition">
+                                <option disabled selected>Kategori Tugas</option>
                                 <option value="Tugas Pokok">Tugas Pokok </option>
                                 <option value="Tugas Tambahan">Tugas Tambahan</option>
                                 <option value="Lain - Lain">Lain - Lain</option>
@@ -58,7 +58,7 @@
                             <label class="control-label">Uraian Kegiatan</label>
                             <input type="text" name="uraian_kegiatan" class="form-control">
                         </div>
-                        <div class="data form-group">
+                        <div class="form-group">
                             <label class="control-label">Perkiraan Waktu Selesai</label>
                             <input type="text" name="waktu_selesai" class="form-control" id="datesecon">
                         </div>
@@ -67,7 +67,7 @@
                             <input type="text" name="tempat_harian" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-fill btn-primary">Submit</button>
-                    <?php echo form_close()?>
+                        <?php echo form_close()?>
                 </div>
             </div>
         </div>
@@ -95,11 +95,11 @@
                             </thead>
 
                             <tbody>
-                                <?php 
+                            <?php 
                                 $no = 1;
                                 foreach ($tugas_harian as $key => $value) {
                                 ?>
-                                <tr> 
+                                <tr>
                                     <td><?= $no++;?></td>
                                     <td><?= $value->nama_lengkap?></td>
                                     <td><?= $value->noreg?></td>
@@ -111,7 +111,7 @@
                                     <td><?= $value->tempat_harian?></td>
                                     <td>
                                     <button class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#edit<?= $value->id_tugas_harian ?>"><i class="material-icons">edit</i></button>
-                                     
+                                     <!-- <button class="btn btn-danger btn-sm"   data-toggle="modal" data-target="#delete<?= $value->id_tugas_lapangan ?>"><i class="material-icons">delete</i></button> -->
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -122,8 +122,8 @@
             </div>
         </div>
     </div>
-
-           <!-- modal edit-->
+    
+    <!-- modal edit-->
 <?php foreach ($tugas_harian as $key => $value) { ?>
 <div class="modal fade" id="edit<?= $value->id_tugas_harian ?>">
         <div class="modal-dialog">
@@ -157,22 +157,22 @@
                     <label>Kategori</label>
                       <?php 
                         if($value->kategori_tugas == "Tugas Pokok"){
-                            echo '<select class="selectpicker" name="kategori_tugas" data-style="select-with-transition" multiple title="Tugas Pokok">
-                            <option disabled>Kategori Tugas</option>
+                            echo '<select class="selectpicker" name="kategori_tugas" data-style="select-with-transition">
+                            <option disabled selected>Kategori Tugas</option>
                             <option value="Tugas Pokok" selected>Tugas Pokok </option>
                             <option value="Tugas Tambahan">Tugas Tambahan</option>
                             <option value="Lain - Lain">Lain - Lain</option>
                         </select>';
                         }else if($value->kategori_tugas == "Tugas Tambahan"){
-                            echo '<select class="selectpicker" name="kategori_tugas" data-style="select-with-transition" multiple title="Tugas Tambahan">
-                            <option disabled>Kategori Tugas</option>
+                            echo '<select class="selectpicker" name="kategori_tugas" data-style="select-with-transition">
+                            <option disabled selected>Kategori Tugas</option>
                             <option value="Tugas Pokok">Tugas Pokok </option>
                             <option value="Tugas Tambahan"  selected>Tugas Tambahan</option>
                             <option value="Lain - Lain">Lain - Lain</option>
                         </select>';
                         }else if($value->kategori_tugas == "Lain - Lain"){
-                            echo '<select class="selectpicker" name="kategori_tugas" data-style="select-with-transition" multiple title="Lain - Lain">
-                            <option disabled>Kategori Tugas</option>
+                            echo '<select class="selectpicker" name="kategori_tugas" data-style="select-with-transition">
+                            <option disabled selected>Kategori Tugas</option>
                             <option value="Tugas Pokok">Tugas Pokok </option>
                             <option value="Tugas Tambahan">Tugas Tambahan</option>
                             <option value="Lain - Lain" selected>Lain - Lain</option>
@@ -210,3 +210,4 @@
       </div>
       <!-- /.modal -->
       <?php } ?>
+      

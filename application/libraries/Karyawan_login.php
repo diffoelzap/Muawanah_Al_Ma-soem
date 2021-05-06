@@ -68,9 +68,9 @@ class Karyawan_login
             $this->ci->session->set_userdata('rumah', $rumah);
             $this->ci->session->set_userdata('tinggal', $tinggal);
             $this->ci->session->set_userdata('profil', $foto_profile);
-            
-            //redirect ke admin
+
             redirect('karyawan');
+           
         }else{
             //jika salah
             $this->ci->session->set_flashdata('error','Username atau Password Salah');
