@@ -22,6 +22,26 @@ class Admin extends CI_Controller {
         $this->load->view('layout/v_wrapper_admin', $data, FALSE);
     }
 
+    public function job_des(){
+        $id_admin = $this->session->userdata('id_admin');
+
+        $data = array('judul' => 'Job Des' ,
+                      'data' => $this->m_admin->data_admin($id_admin),
+                      'job_des' => $this->m_admin->get_data_job(),
+                      'isi'  => 'v_admin_job');
+        $this->load->view('layout/v_wrapper_admin', $data, FALSE);
+    }
+
+    public function permohonan_cuti(){
+        $id_admin = $this->session->userdata('id_admin');
+
+        $data = array('judul' => 'Job Des' ,
+                      'data' => $this->m_admin->data_admin($id_admin),
+                      'cuti' => $this->m_admin->get_data_cuti(),
+                      'isi'  => 'v_admin_cuti');
+        $this->load->view('layout/v_wrapper_admin', $data, FALSE);
+    }
+
     public function login()
     {
         $this->form_validation->set_rules('username', 'Username', 'required', array(

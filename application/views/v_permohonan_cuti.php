@@ -172,7 +172,7 @@
                                             <i class="material-icons">assignment</i>
                                         </div>
                                         <div class="card-content">
-                                            <h4 class="card-title">Riwayat Tugas Lapangan</h4>
+                                            <h4 class="card-title">Riwayat Permohonan Cuti</h4>
                                             <div class="table-responsive">
                                                 <table class="table table-bordered table-striped table-hover table-condensed" role="grid">
                                                     <thead class="text-primary">
@@ -330,7 +330,7 @@
                   </div>
                   <div class="form-group">
                     <label>Tempat Harian</label>
-                    <input type="text" name="keterangan" value="<?= $value->keterangan?>" class="form-control">
+                    <input type="text" name="keterangan" value="<?= $value->keterangan?>" class="form-control" required>
                   </div>
                   
 

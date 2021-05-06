@@ -27,48 +27,25 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    <li <?php if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'harian'&& $this->uri->segment(2) != 'lapangan' && $this->uri->segment(2) != 'cuti' && $this->uri->segment(2) != 'peminjaman'){echo 'class="active"';}?>>
+                    <li <?php if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'permohonan_cuti' && $this->uri->segment(2) != 'job_des'){echo 'class="active"';}?>>
                         <a href="<?= base_url('admin')?>">
                             <i class="material-icons">dashboard</i>
                             <p>Hal. Pengguna</p>
                         </a>
                     </li>
-                    
-                    <li <?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo 'class="active"';}?>>
-                        <a data-toggle="collapse" href="#formsExamples" <?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo 'aria-expanded="true"';}?>>
+
+                    <li <?php if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'job_des'){echo 'class="active"';}?>>
+                        <a href="<?= base_url('admin/job_des')?>">
                             <i class="material-icons">content_paste</i>
-                            <p>Tugas
-                                <b class="caret"></b>
-                            </p>
+                            <p>Job Des</p>
                         </a>
-                        <div class="<?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo "collapse in";}else{echo "collapse";}?>" id="formsExamples">
-                            <ul class="nav">
-                                <li <?php if($this->uri->segment(2) == 'harian'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('admin/harian')?>">Tugas Harian</a>
-                                </li>
-                                <li <?php if($this->uri->segment(2) == 'lapangan'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('admin/lapangan')?>">Tugas Lapangan</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
-                    <li <?php if($this->uri->segment(2) == 'cuti' || $this->uri->segment(2) == 'peminjaman'){echo 'class="active"';}?>>
-                        <a data-toggle="collapse" href="#tablesExamples">
+
+                    <li <?php if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'permohonan_cuti'){echo 'class="active"';}?>>
+                        <a href="<?= base_url('admin/permohonan_cuti')?>">
                             <i class="material-icons">date_range</i>
-                            <p>Permohonan
-                                <b class="caret"></b>
-                            </p>
+                            <p>Permohonan Cuti</p>
                         </a>
-                        <div class="<?php if($this->uri->segment(2) == 'cuti' || $this->uri->segment(2) == 'peminjaman'){echo "collapse in";}else{echo "collapse";}?>" id="tablesExamples">
-                            <ul class="nav">
-                                <li <?php if($this->uri->segment(2) == 'cuti'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('admin/cuti')?>">Cuti</a>
-                                </li>
-                                <li <?php if($this->uri->segment(2) == 'peminjaman'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('admin/peminjaman')?>">Peminjaman Mobil</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                     
                     <li>
@@ -104,16 +81,12 @@
                         </button>
                         <a class="navbar-brand" href="#"> 
                         <?php
-                        if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'harian' && $this->uri->segment(2) != 'lapangan' && $this->uri->segment(2) != 'cuti' && $this->uri->segment(2) != 'peminjaman') {
+                        if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'job_des' && $this->uri->segment(2) != 'permohonan_cuti' && $this->uri->segment(2) != 'cuti' && $this->uri->segment(2) != 'peminjaman') {
                           echo 'Dashboard';  
-                        }else if($this->uri->segment(2) == 'harian'){
-                          echo 'Data Tugas Harian';
-                        }else if($this->uri->segment(2) == 'lapangan'){
-                          echo 'Data Tugas Lapangan';
-                        }else if($this->uri->segment(2) == 'cuti'){
-                            echo 'Data Permohonan Cuti';
-                        }else if($this->uri->segment(2) == 'peminjaman'){
-                            echo 'Data Peminjaman Mobil';
+                        }else if($this->uri->segment(2) == 'job_des'){
+                          echo 'Data Job Des';
+                        }else if($this->uri->segment(2) == 'permohonan_cuti'){
+                          echo 'Data Permohonan Cuti';
                         }
                         ?>
                         </a>

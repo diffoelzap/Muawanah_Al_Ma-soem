@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url() ?>template/karyawan/assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="<?= base_url() ?>template/karyawan/assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Material Dashboard PRO by Creative Tim | Premium Bootstrap Admin Template</title>
+    <title>Website Karyawan</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Canonical SEO -->
@@ -76,48 +76,25 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    <li <?php if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) != 'about'|| $this->uri->segment(2) == 'edit' && $this->uri->segment(2) != 'about'){echo 'class="active"';}?>>
+                    <li <?php if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) != 'about' && $this->uri->segment(2) != 'job_des' && $this->uri->segment(2) != 'permohonan_cuti' || $this->uri->segment(2) == 'edit'){echo 'class="active"';}?>>
                         <a href="<?= base_url('karyawan')?>">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    
-                    <li <?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo 'class="active"';}?>>
-                        <a data-toggle="collapse" href="#formsExamples" <?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo 'aria-expanded="true"';}?>>
-                            <i class="material-icons">content_paste</i>
-                            <p>Tugas
-                                <b class="caret"></b>
-                            </p>
+
+                    <li <?php if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) == 'job_des'){echo 'class="active"';}?>>
+                        <a href="<?= base_url('karyawan/job_des')?>">
+                            <i class="material-icons">content_paster</i>
+                            <p>Job Des</p>
                         </a>
-                        <div class="<?php if($this->uri->segment(2) == 'harian' || $this->uri->segment(2) == 'lapangan'){echo "collapse in";}else{echo "collapse";}?>" id="formsExamples">
-                            <ul class="nav">
-                                <li <?php if($this->uri->segment(2) == 'harian'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('tugas/harian')?>">Tugas Harian</a>
-                                </li>
-                                <li <?php if($this->uri->segment(2) == 'lapangan'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('tugas/lapangan')?>">Tugas Lapangan</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
-                    <li <?php if($this->uri->segment(2) == 'cuti' || $this->uri->segment(2) == 'peminjaman'){echo 'class="active"';}?>>
-                        <a data-toggle="collapse" href="#tablesExamples">
+
+                    <li <?php if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) == 'permohonan_cuti'){echo 'class="active"';}?>>
+                        <a href="<?= base_url('karyawan/permohonan_cuti')?>">
                             <i class="material-icons">date_range</i>
-                            <p>Permohonan
-                                <b class="caret"></b>
-                            </p>
+                            <p>Permohonan Cuti</p>
                         </a>
-                        <div class="<?php if($this->uri->segment(2) == 'cuti' || $this->uri->segment(2) == 'peminjaman'){echo "collapse in";}else{echo "collapse";}?>" id="tablesExamples">
-                            <ul class="nav">
-                                <li <?php if($this->uri->segment(2) == 'cuti'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('permohonan/cuti')?>">Cuti</a>
-                                </li>
-                                <li <?php if($this->uri->segment(2) == 'peminjaman'){echo 'class="active"';}?>>
-                                    <a href="<?= base_url('permohonan/peminjaman')?>">Peminjaman Mobil</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                     
                     <li <?php if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) == 'about'){echo 'class="active"';}?>>
@@ -153,15 +130,13 @@
                         </button>
                         <a class="navbar-brand" href="#"> 
                         <?php
-                        if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) != 'about') {
+                        if($this->uri->segment(1) == 'karyawan' && $this->uri->segment(2) != 'about' && $this->uri->segment(2) != 'job_des' && $this->uri->segment(2) != 'permohonan_cuti') {
                           echo 'Dashboard';  
                         }else if($this->uri->segment(2) == 'edit'){
                           echo 'Edit Profile'; 
-                        }else if($this->uri->segment(2) == 'harian'){
-                          echo 'Data Tugas Harian';
-                        }else if($this->uri->segment(2) == 'lapangan'){
-                          echo 'Data Tugas Lapangan';
-                        }else if($this->uri->segment(2) == 'cuti'){
+                        }else if($this->uri->segment(2) == 'job_des'){
+                          echo 'Data Job Des';
+                        }else if($this->uri->segment(2) == 'permohonan_cuti'){
                             echo 'Data Permohonan Cuti';
                         }else if($this->uri->segment(2) == 'peminjaman'){
                             echo 'Data Peminjaman Mobil';

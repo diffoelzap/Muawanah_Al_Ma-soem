@@ -30,6 +30,14 @@ class M_admin extends CI_Model {
         return $this->db->get()->result();
         
     }
+    public function get_data_job()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_job_des');    
+        $this->db->order_by('tanggal', 'desc');
+        return $this->db->get()->result();
+        
+    }
     public function get_data_lapangan()
     {
         $this->db->select('*');
