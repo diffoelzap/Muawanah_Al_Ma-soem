@@ -42,11 +42,11 @@
                             <input type="text" name="tanggal" class="form-control" id="datepicker">
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Job Des</label>
-                            <input type="text" name="job_des" class="form-control" value="<?= $data->job_des?>" readonly>
+                            <label class="control-label">Jabatan</label>
+                            <input type="text" name="jabatan" class="form-control" value="<?= $data->jabatan?>" readonly>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Keterangan</label>
+                            <label class="control-label">Job Des</label>
                             <input type="text" name="keterangan" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-fill btn-primary">Submit</button>
@@ -69,8 +69,8 @@
                                 <th>Nama</th>
                                 <th>Noreg</th>
                                 <th>Tangggal</th>
+                                <th>Jabatan</th>
                                 <th>Job Des</th>
-                                <th>Keterangan</th>
                                 <th>Aksi</th>
                             </thead>
 
@@ -84,7 +84,7 @@
                                     <td><?= $value->nama_lengkap?></td>
                                     <td><?= $value->noreg?></td>
                                     <td class="text-primary"><?= $value->tanggal?></td>
-                                    <td><?= $value->job_des?></td>
+                                    <td><?= $value->jabatan?></td>
                                     <td><?= $value->keterangan?></td>
                                     <td>
                                     <button class="btn btn-warning btn-sm"  data-toggle="modal" data-target="#edit<?= $value->id_job_des ?>"><i class="material-icons">edit</i></button>
@@ -127,11 +127,11 @@
                     <input type="date" name="tanggal" value="<?= $value->tanggal?>" class="form-control" placeholder="yyyy-dd-mm">
                   </div>
                   <div class="form-group">
-                    <label>Job Des</label>
-                    <input type="text" name="job_des" value="<?= $value->job_des?>" class="form-control" readonly>
+                    <label>Jabatan</label>
+                    <input type="text" name="jabatan" value="<?= $value->jabatan?>" class="form-control" readonly>
                   </div>
                   <div class="form-group">
-                    <label>Keterangan</label>
+                    <label>Job Des</label>
                     <input type="text" name="keterangan" value="<?= $value->keterangan?>" class="form-control" required>
                   </div>
                   

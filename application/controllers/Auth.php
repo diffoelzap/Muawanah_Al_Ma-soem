@@ -70,8 +70,6 @@ class Auth extends CI_Controller {
             array('required' => '%s Harus diisi'));
         $this->form_validation->set_rules('golongan', 'Golongan', 'required',
             array('required' => '%s Harus diisi'));
-        $this->form_validation->set_rules('job_des', 'Job Des', 'required',
-            array('required' => '%s Harus diisi'));
             
             if ($this->form_validation->run() == TRUE) {
            
@@ -117,7 +115,6 @@ class Auth extends CI_Controller {
                                     'golongan'   => $this->input->post('golongan'),
                                     'rumah'   => $this->input->post('rumah'),
                                     'tinggal'   => $this->input->post('tinggal'),
-                                    'job_des'   => $this->input->post('job_des'),
                                     'foto_profil'      => $upload_data['uploads']['file_name'],
                                    
                                             
@@ -167,8 +164,6 @@ class Auth extends CI_Controller {
         $this->form_validation->set_rules('jabatan', 'Jabatan', 'required',
             array('required' => '%s Harus diisi'));
         $this->form_validation->set_rules('golongan', 'Golongan', 'required',
-            array('required' => '%s Harus diisi'));
-        $this->form_validation->set_rules('job_des', 'Job Des', 'required',
             array('required' => '%s Harus diisi'));
 
             if ($this->form_validation->run() == TRUE) {
@@ -228,7 +223,6 @@ class Auth extends CI_Controller {
                                     'golongan'   => $this->input->post('golongan'),
                                     'rumah'   => $this->input->post('rumah'),
                                     'tinggal'   => $this->input->post('tinggal'),
-                                    'job_des'   => $this->input->post('job_des'),
                                     'foto_profil'      => $upload_data['uploads']['file_name'],
                                    
                                             
@@ -262,8 +256,6 @@ class Auth extends CI_Controller {
                         'golongan'   => $this->input->post('golongan'),
                         'rumah'   => $this->input->post('rumah'),
                         'tinggal'   => $this->input->post('tinggal'),
-                        'job_des'   => $this->input->post('job_des'),
-                     
                                 
                         );
                         $this->m_auth->edit($data);

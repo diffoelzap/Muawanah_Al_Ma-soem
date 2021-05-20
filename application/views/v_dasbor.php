@@ -202,15 +202,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <label class="col-sm-2 label-on-left">Job Des</label>
-                                            <div class="col-sm-10">
-                                                <div class="form-group">
-                                                    <p class="form-control-static"><?= $data->job_des ?></p>
-                                                   
-                                                </div>
-                                            </div>
-                                        </div>
                                     </form>
                                 </div>
                             </div>

@@ -67,7 +67,7 @@ class Karyawan extends CI_Controller {
            $data = array('nama_lengkap' => $this->input->post('nama_lengkap'),
                          'noreg' => $this->input->post('noreg'),
                          'tanggal' => $this->input->post('tanggal'),
-                         'job_des' => $this->input->post('job_des'),
+                         'jabatan' => $this->input->post('jabatan'),
                          'keterangan' => $this->input->post('keterangan'),
                         );
             $this->m_job_des->add($data);
@@ -97,7 +97,7 @@ class Karyawan extends CI_Controller {
                           'nama_lengkap' => $this->input->post('nama_lengkap'),
                           'noreg' => $this->input->post('noreg'),
                           'tanggal' => $this->input->post('tanggal'),
-                          'job_des' => $this->input->post('job_des'),
+                          'jabatan' => $this->input->post('jabatan'),
                           'keterangan' => $this->input->post('keterangan'),
                          );
              $this->m_job_des->edit($data);

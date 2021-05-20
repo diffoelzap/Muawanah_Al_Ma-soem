@@ -13,8 +13,8 @@
                                                 <th>Nama</th>
                                                 <th>Noreg</th>
                                                 <th>Tangggal</th>
+                                                <th>Jabatan</th>
                                                 <th>Job Des</th>
-                                                <th>Keterangan</th>
                                             </thead>
                                             <tbody>
                                                 <?php 
@@ -26,7 +26,7 @@
                                                 <td><?= $value->nama_lengkap?></td>
                                                 <td><?= $value->noreg?></td>
                                                 <td class="text-primary"><?= $value->tanggal?></td>
-                                                <td><?= $value->job_des?></td>
+                                                <td><?= $value->jabatan?></td>
                                                 <td><?= $value->keterangan?></td>
                                                 </tr>
                                                 <?php

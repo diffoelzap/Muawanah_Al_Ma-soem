@@ -311,12 +311,6 @@
                                                     <input type="text" name="golongan" class="form-control" value="<?= set_value('golongan')?>" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Job Des</label>
-                                                    <input type="text" name="job_des" class="form-control" value="<?= set_value('job_des')?>" required>
-                                                </div>
-                                            </div>
                                         </div>
                                         <button type="submit" class="btn btn-info pull-right">Registrasi</button>
                                         <div class="clearfix"></div>
