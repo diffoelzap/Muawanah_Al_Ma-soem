@@ -78,13 +78,13 @@
                                         <tr>
                                             <td>
                                                 <div class="video-container">
-                                                    <video width="300" height="200" controls>
+                                                    <video width="300" height="200" controls id="video_example">
                                                         <source src="<?= base_url('assets/video/'.$value->video_profile)?>" type="video/mp4">
                                                     </video>
                                                 </div>
                                             </td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" class="btn btn-success" data-toggle="modal" data-target="#edit_video<?= $value->id_video ?>">
+                                                <button type="button" rel="tooltip" class="btn btn-success" data-toggle="modal" data-target="#edit_video<?= $value->id_video ?>" onclick="editVideo(this);">
                                                     <i class="material-icons">edit</i>
                                                 </button>
                                             </td>
@@ -500,5 +500,11 @@
 
 
             reader.readAsDataURL(file);
+        }
+
+        function editVideo(){
+            var video = document.getElementById("video_example");
+            video.pause();
+            video.currentTime = 0;
         }
     </script>
