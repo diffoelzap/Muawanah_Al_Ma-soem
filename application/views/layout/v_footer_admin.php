@@ -11,11 +11,6 @@
 
 
 
-<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/material.min.js" type="text/javascript"></script>
-<script src="<?= base_url() ?>template/karyawan/assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
 <!-- Forms Validations Plugin -->
 <script src="<?= base_url() ?>template/karyawan/assets/js/jquery.validate.min.js"></script>
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
@@ -97,6 +92,18 @@
         $('.dataTables_length').addClass('bs-select');
 
     });
+
+    $.extend( true, $.fn.dataTable.defaults, {
+    "paging":   false,
+    "searching": false,
+    "ordering": false,
+    "info":false
+    } );
+ 
+ 
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
 </script>
 <script>
      window.setTimeout(function() {

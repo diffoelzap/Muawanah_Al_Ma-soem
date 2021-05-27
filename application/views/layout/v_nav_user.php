@@ -1,14 +1,25 @@
 <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="profile.html">Profile</a></li>
-          <li><a class="nav-link scrollto " href="product.html">Product</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Reseller</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Karyawan</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+                <ul>
+                    <ul>
+                        <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) != 'profile' && $this->uri->segment(2) != 'product' && $this->uri->segment(2) != 'contact' && $this->uri->segment(2) != 'reseller'){echo 'active';}?>" href="<?= base_url('user')?>">HOME</a></li>
+                        <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) == 'profile'){echo 'active';}?>" href="<?= base_url('user/profile')?>">PROFILE</a></li>
+                        <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) == 'product'){echo 'active';}?>" href="<?= base_url('user/product')?>">PRODUK</a></li>
+                        <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) == 'contact'){echo 'active';}?>" href="<?= base_url('user/contact')?>">CONTACT</a></li>
+                        <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) == 'reseller'){echo 'active';}?>" href="<?= base_url('user/reseller')?>">RESELER</a></li>
+                        <li><a class="nav-link scrollto" href="#">KARYAWAN</a></li>
+                    </ul>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
 
-    </div>
-  </header><!-- End Header -->
+            <div class="header-social-links d-flex align-items-center">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+            </div>
+
+        </div>
+    </header>
+    <!-- End Header -->

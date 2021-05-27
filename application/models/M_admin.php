@@ -61,6 +61,41 @@ class M_admin extends CI_Model {
         $this->db->order_by('id_peminjaman', 'desc');
         return $this->db->get()->result();
     }
+    public function get_data_reseller()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_reseller');
+        $this->db->order_by('id_reseller', 'desc');
+        return $this->db->get()->result();
+    }
+    public function get_data_first_brand()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_brand');   
+        $this->db->where('kategori_brand=1');
+        $this->db->order_by('id_brand', 'desc');
+        return $this->db->get()->result();
+    }
+    public function get_data_second_brand()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_brand');   
+        $this->db->where('kategori_brand=2');
+        $this->db->order_by('id_brand', 'desc');
+        return $this->db->get()->result();
+    }
+    public function get_data_karyawan(){
+        $this->db->select('*');
+        $this->db->from('tbl_karyawan');
+        $this->db->order_by('id_karyawan', 'desc');
+        return $this->db->get()->result();
+    }
+    public function get_data_video(){
+        $this->db->select('*');
+        $this->db->from('tbl_video');
+        $this->db->order_by('id_video', 'desc');
+        return $this->db->get()->result();
+    }
     public function edit_cuti($data)
     {
         $this->db->where('id_cuti', $data['id_cuti']);
@@ -70,6 +105,16 @@ class M_admin extends CI_Model {
     {
         $this->db->where('id_peminjaman', $data['id_peminjaman']);
         $this->db->update('tbl_peminjaman', $data);
+    }
+    public function edit_brand($data)
+    {
+        $this->db->where('id_brand', $data['id_brand']);
+        $this->db->update('tbl_brand', $data);
+    }
+    public function edit_video($data)
+    {
+        $this->db->where('id_video', $data['id_video']);
+        $this->db->update('tbl_video', $data);
     }
 }
 

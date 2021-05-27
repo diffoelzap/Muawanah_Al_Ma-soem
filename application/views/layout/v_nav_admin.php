@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <ul class="nav">
-                    <li <?php if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'permohonan_cuti' && $this->uri->segment(2) != 'job_des'){echo 'class="active"';}?>>
+                    <li <?php if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'permohonan_cuti' && $this->uri->segment(2) != 'job_des' && $this->uri->segment(2) != 'reseller'){echo 'class="active"';}?>>
                         <a href="<?= base_url('admin')?>">
                             <i class="material-icons">dashboard</i>
                             <p>Hal. Pengguna</p>
@@ -48,8 +48,8 @@
                         </a>
                     </li>
                     
-                    <li>
-                        <a href="about.html">
+                    <li <?php if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'reseller'){echo 'class="active"';}?>>
+                        <a href="<?= base_url('admin/reseller')?>">
                             <i class="material-icons">info</i>
                             <p>Reseller</p>
                         </a>
@@ -81,13 +81,15 @@
                         </button>
                         <a class="navbar-brand" href="#"> 
                         <?php
-                        if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'job_des' && $this->uri->segment(2) != 'permohonan_cuti' && $this->uri->segment(2) != 'cuti' && $this->uri->segment(2) != 'peminjaman') {
+                        if($this->uri->segment(1) == 'admin' && $this->uri->segment(2) != 'job_des' && $this->uri->segment(2) != 'permohonan_cuti' && $this->uri->segment(2) != 'cuti' && $this->uri->segment(2) != 'peminjaman' && $this->uri->segment(2) != 'reseller') {
                           echo 'Dashboard';  
                         }else if($this->uri->segment(2) == 'job_des'){
                           echo 'Data Job Des';
                         }else if($this->uri->segment(2) == 'permohonan_cuti'){
                           echo 'Data Permohonan Cuti';
-                        }
+                        }else if($this->uri->segment(2) == 'reseller'){
+                            echo 'Data Reseller';
+                          }
                         ?>
                         </a>
                     </div>

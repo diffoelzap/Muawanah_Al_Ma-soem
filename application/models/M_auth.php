@@ -21,6 +21,23 @@ class M_auth extends CI_Model {
         return $this->db->get()->row();
         
     }
+
+    public function data_brand($id_brand)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_brand');
+        $this->db->where(array('id_brand' => $id_brand));
+        return $this->db->get()->row();
+        
+    }
+    public function data_video($id_video)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_video');
+        $this->db->where(array('id_video' => $id_video));
+        return $this->db->get()->row();
+        
+    }
     public function add($data)
     {
         $this->db->insert('tbl_karyawan', $data);
