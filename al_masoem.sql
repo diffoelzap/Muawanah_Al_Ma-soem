@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Bulan Mei 2021 pada 18.26
+-- Waktu pembuatan: 28 Bulan Mei 2021 pada 00.57
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -41,6 +41,32 @@ CREATE TABLE `tbl_admin` (
 
 INSERT INTO `tbl_admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
 (1, 'abraham', '123456', 'Abraham Colim');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_brand`
+--
+
+CREATE TABLE `tbl_brand` (
+  `id_brand` int(11) NOT NULL,
+  `nama_brand` varchar(255) DEFAULT NULL,
+  `kategori_brand` int(1) DEFAULT NULL,
+  `deskripsi_brand` text,
+  `foto_brand` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_brand`
+--
+
+INSERT INTO `tbl_brand` (`id_brand`, `nama_brand`, `kategori_brand`, `deskripsi_brand`, `foto_brand`) VALUES
+(1, 'App 1', 1, 'App', 'produk1.jpg'),
+(2, 'App 2', 1, 'App', 'produk2.jpg'),
+(3, 'Card 2', 1, 'Card', 'produk3.jpg'),
+(4, 'App 3', 1, 'App', 'produk4.jpg'),
+(5, 'Card 1', 1, 'Card', 'produk11.jpg'),
+(6, 'Card 3', 2, 'Card', 'produk6.jpg');
 
 -- --------------------------------------------------------
 
@@ -86,7 +112,7 @@ CREATE TABLE `tbl_job_des` (
   `nama_lengkap` varchar(255) DEFAULT NULL,
   `noreg` varchar(5) DEFAULT NULL,
   `tanggal` date DEFAULT NULL,
-  `job_des` varchar(255) DEFAULT NULL,
+  `jabatan` varchar(255) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -94,8 +120,9 @@ CREATE TABLE `tbl_job_des` (
 -- Dumping data untuk tabel `tbl_job_des`
 --
 
-INSERT INTO `tbl_job_des` (`id_job_des`, `nama_lengkap`, `noreg`, `tanggal`, `job_des`, `keterangan`) VALUES
-(1, 'Wisnu', '4984', '2021-05-06', 'okwowkowkrowkowrw', 'wewew');
+INSERT INTO `tbl_job_des` (`id_job_des`, `nama_lengkap`, `noreg`, `tanggal`, `jabatan`, `keterangan`) VALUES
+(1, 'Wisnu', '4984', '2021-05-06', 'okwowkowkrowkowrw', 'wewew'),
+(2, 'Diffo Elza', '4321', '2021-05-20', 'Manager', 'sadasdsad');
 
 -- --------------------------------------------------------
 
@@ -127,7 +154,6 @@ CREATE TABLE `tbl_karyawan` (
   `golongan` varchar(16) DEFAULT NULL,
   `rumah` text,
   `tinggal` text,
-  `job_des` varchar(255) DEFAULT NULL,
   `foto_profil` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -135,12 +161,12 @@ CREATE TABLE `tbl_karyawan` (
 -- Dumping data untuk tabel `tbl_karyawan`
 --
 
-INSERT INTO `tbl_karyawan` (`id_karyawan`, `username`, `password`, `nik`, `noreg`, `nama_lengkap`, `nama_panggilan`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `suku_bangsa`, `status_perkawinan`, `status_karyawan`, `tanggal_masuk`, `lokasi`, `direktorat`, `divisi`, `unit`, `jabatan`, `golongan`, `rumah`, `tinggal`, `job_des`, `foto_profil`) VALUES
-(10, 'diffoelzap', '123456', '3277030212980005', '4321', 'Diffo Elza', 'Diffo', 'Cimahi', '1998-12-02', 'Laki - Laki', 'Islam', 'WNI', 'Belum Menikah', 'Sementara', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Manager', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', 'Sekretaris', 'logo_jadi.png'),
-(11, 'muhammad', '123456', '3277030212980006', '4325', 'Muhammad', 'Lutfi', 'Bandung', '2000-08-30', 'Laki - Laki', 'Kristen', 'WNI', 'Menikah', 'Tetap', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'CEO AQUA', '1.5', 'JL. BOJONGSOANG', 'JL TAMAN SARI', NULL, 'test1.jpg'),
-(12, 'hibbanm', '123456', '3277030212980045', '4567', 'Hibban', 'hihi', 'Ranca Ekek', '2021-04-27', 'Laki - Laki', 'Kristen', 'WNI', 'Belum Menikah', 'Tetap', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Manager', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', NULL, 'Moon.jpg'),
-(13, 'zahnil', '123456', '327703021298075', '4323', 'Zahnil', 'Buyung', 'Padang', '1998-12-02', 'Laki - Laki', 'Islam', 'WNI', 'Menikah', 'Sementara', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Manager', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', NULL, 'logo_jadi1.png'),
-(14, 'wisnutama', '123456', '3210392103213', '4984', 'Wisnu', 'Tama', 'Bandung', '2021-05-14', 'Laki - Laki', 'Islam', 'WNI', 'Menikah', 'Sementara', '2021-05-13', 'asdsa', 'sadsa', 'sadsad', 'sadasd', 'sadsad', 'sadsad', 'JL.CISANGKAN', 'JL.CISANGKAN', 'okwowkowkrowkowrw', 'soal1.jpeg');
+INSERT INTO `tbl_karyawan` (`id_karyawan`, `username`, `password`, `nik`, `noreg`, `nama_lengkap`, `nama_panggilan`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `suku_bangsa`, `status_perkawinan`, `status_karyawan`, `tanggal_masuk`, `lokasi`, `direktorat`, `divisi`, `unit`, `jabatan`, `golongan`, `rumah`, `tinggal`, `foto_profil`) VALUES
+(10, 'diffoelzap', '123456', '3277030212980005', '4321', 'Diffo Elza Pratama', 'Diffo', 'Cimahi', '1998-12-02', 'Laki - Laki', 'Islam', 'WNI', 'Belum Menikah', 'Sementara', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Sekretaris', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', 'DiffoElzaPratama_6706174097_D3RPLA.jpg'),
+(11, 'muhammad', '123456', '3277030212980006', '4325', 'Muhammad', 'Lutfi', 'Bandung', '2000-08-30', 'Laki - Laki', 'Kristen', 'WNI', 'Menikah', 'Tetap', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'CEO AQUA', '1.5', 'JL. BOJONGSOANG', 'JL TAMAN SARI', 'test1.jpg'),
+(12, 'hibbanm', '123456', '3277030212980045', '4567', 'Hibban', 'hihi', 'Ranca Ekek', '2021-04-27', 'Laki - Laki', 'Kristen', 'WNI', 'Belum Menikah', 'Tetap', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Manager', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', 'Moon.jpg'),
+(13, 'zahnil', '123456', '327703021298075', '4323', 'Zahnil', 'Buyung', 'Padang', '1998-12-02', 'Laki - Laki', 'Islam', 'WNI', 'Menikah', 'Sementara', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Manager', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', 'logo_jadi1.png'),
+(14, 'wisnutama', '123456', '3210392103213', '4984', 'Wisnu', 'Tama', 'Bandung', '2021-05-14', 'Laki - Laki', 'Islam', 'WNI', 'Menikah', 'Sementara', '2021-05-13', 'asdsa', 'sadsa', 'sadsad', 'sadasd', 'sadsad', 'sadsad', 'JL.CISANGKAN', 'JL.CISANGKAN', 'Moon1.jpg');
 
 -- --------------------------------------------------------
 
@@ -173,6 +199,28 @@ INSERT INTO `tbl_peminjaman` (`id_peminjaman`, `nama_lengkap`, `noreg`, `tanggal
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tbl_reseller`
+--
+
+CREATE TABLE `tbl_reseller` (
+  `id_reseller` int(11) NOT NULL,
+  `nama_reseller` varchar(255) DEFAULT NULL,
+  `email_reseller` varchar(255) DEFAULT NULL,
+  `telepon_reseller` varchar(12) DEFAULT NULL,
+  `alamat_reseller` text,
+  `pesan_reseller` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_reseller`
+--
+
+INSERT INTO `tbl_reseller` (`id_reseller`, `nama_reseller`, `email_reseller`, `telepon_reseller`, `alamat_reseller`, `pesan_reseller`) VALUES
+(1, 'Diffo Elza', 'diffoelza@gmail.com', '081292838383', 'JL KH USMAN DHOMIRI NO:01', 'sadsad');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tbl_saran`
 --
 
@@ -190,6 +238,26 @@ CREATE TABLE `tbl_saran` (
 INSERT INTO `tbl_saran` (`id_saran`, `nama_lengkap`, `noreg`, `saran`) VALUES
 (4, 'Ganteng', '4321', 'sadsadsadasdsadsa'),
 (5, 'Ganteng', '4321', 'asdsadsad');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_slide`
+--
+
+CREATE TABLE `tbl_slide` (
+  `id_slide` int(11) NOT NULL,
+  `foto_slide` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_slide`
+--
+
+INSERT INTO `tbl_slide` (`id_slide`, `foto_slide`) VALUES
+(1, 'home3.jpg'),
+(2, '11.jpg'),
+(3, 'kantor1.jpg');
 
 -- --------------------------------------------------------
 
@@ -268,6 +336,24 @@ INSERT INTO `tbl_tugas_lapangan` (`id_tugas_lapangan`, `nama_lengkap`, `noreg`, 
 (4, 'Diffo Elza', '4321', '2021-04-26', '11:32:16', 'Tugas ke lapangan dari kantor', 'Kerja lah goblok', '05:30:10', 'Langsung pulang rumah'),
 (5, 'Diffo Elza', '4321', '2021-04-26', '11:32:32', 'Tugas ke lapangan dari kantor', 'Aku Bingung Harus Bagaimana', '05:30:35', 'Ke kantor lagi');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_video`
+--
+
+CREATE TABLE `tbl_video` (
+  `id_video` int(11) NOT NULL,
+  `video_profile` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_video`
+--
+
+INSERT INTO `tbl_video` (`id_video`, `video_profile`) VALUES
+(1, 'example.mp4');
+
 --
 -- Indexes for dumped tables
 --
@@ -277,6 +363,12 @@ INSERT INTO `tbl_tugas_lapangan` (`id_tugas_lapangan`, `nama_lengkap`, `noreg`, 
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indeks untuk tabel `tbl_brand`
+--
+ALTER TABLE `tbl_brand`
+  ADD PRIMARY KEY (`id_brand`);
 
 --
 -- Indeks untuk tabel `tbl_cuti`
@@ -303,10 +395,22 @@ ALTER TABLE `tbl_peminjaman`
   ADD PRIMARY KEY (`id_peminjaman`);
 
 --
+-- Indeks untuk tabel `tbl_reseller`
+--
+ALTER TABLE `tbl_reseller`
+  ADD PRIMARY KEY (`id_reseller`);
+
+--
 -- Indeks untuk tabel `tbl_saran`
 --
 ALTER TABLE `tbl_saran`
   ADD PRIMARY KEY (`id_saran`);
+
+--
+-- Indeks untuk tabel `tbl_slide`
+--
+ALTER TABLE `tbl_slide`
+  ADD PRIMARY KEY (`id_slide`);
 
 --
 -- Indeks untuk tabel `tbl_tugas_harian`
@@ -321,6 +425,12 @@ ALTER TABLE `tbl_tugas_lapangan`
   ADD PRIMARY KEY (`id_tugas_lapangan`);
 
 --
+-- Indeks untuk tabel `tbl_video`
+--
+ALTER TABLE `tbl_video`
+  ADD PRIMARY KEY (`id_video`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -329,6 +439,12 @@ ALTER TABLE `tbl_tugas_lapangan`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_brand`
+--
+ALTER TABLE `tbl_brand`
+  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_cuti`
@@ -340,7 +456,7 @@ ALTER TABLE `tbl_cuti`
 -- AUTO_INCREMENT untuk tabel `tbl_job_des`
 --
 ALTER TABLE `tbl_job_des`
-  MODIFY `id_job_des` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_job_des` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_karyawan`
@@ -355,10 +471,22 @@ ALTER TABLE `tbl_peminjaman`
   MODIFY `id_peminjaman` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT untuk tabel `tbl_reseller`
+--
+ALTER TABLE `tbl_reseller`
+  MODIFY `id_reseller` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `tbl_saran`
 --
 ALTER TABLE `tbl_saran`
   MODIFY `id_saran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_slide`
+--
+ALTER TABLE `tbl_slide`
+  MODIFY `id_slide` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_tugas_harian`
@@ -371,6 +499,12 @@ ALTER TABLE `tbl_tugas_harian`
 --
 ALTER TABLE `tbl_tugas_lapangan`
   MODIFY `id_tugas_lapangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_video`
+--
+ALTER TABLE `tbl_video`
+  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
