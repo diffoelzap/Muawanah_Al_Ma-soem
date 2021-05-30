@@ -27,6 +27,7 @@ class User extends CI_Controller {
     {
         $data = array('judul' => 'Halaman Profile', 
                       'video' => $this->m_user->get_video(),
+                      'pegawai' => $this->m_user->get_pegawai(),
                       'isi' => 'v_profile');
         $this->load->view('layout/v_wrapper_user', $data, FALSE);
 

@@ -90,6 +90,12 @@ class M_admin extends CI_Model {
         $this->db->order_by('id_karyawan', 'desc');
         return $this->db->get()->result();
     }
+    public function get_data_pegawai(){
+        $this->db->select('*');
+        $this->db->from('tbl_pegawai');
+        $this->db->order_by('id_pegawai', 'desc');
+        return $this->db->get()->result();
+    }
     public function get_data_video(){
         $this->db->select('*');
         $this->db->from('tbl_video');

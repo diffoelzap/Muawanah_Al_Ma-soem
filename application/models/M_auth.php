@@ -21,6 +21,14 @@ class M_auth extends CI_Model {
         return $this->db->get()->row();
         
     }
+    public function data_pegawai($id_pegawai)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_pegawai');
+        $this->db->where(array('id_pegawai' => $id_pegawai));
+        return $this->db->get()->row();
+        
+    }
 
     public function data_brand($id_brand)
     {
@@ -47,6 +55,12 @@ class M_auth extends CI_Model {
     {
         $this->db->where('id_karyawan', $data['id_karyawan']);
         $this->db->update('tbl_karyawan', $data);
+        
+    }
+    public function edit_pegawai($data)
+    {
+        $this->db->where('id_pegawai', $data['id_pegawai']);
+        $this->db->update('tbl_pegawai', $data);
         
     }
 }

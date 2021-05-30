@@ -16,6 +16,12 @@ class m_user extends CI_Model {
         $this->db->where(array('id_slide' => $id_slide));
         return $this->db->get()->row();
     }
+    public function get_pegawai(){
+        $this->db->select('*');
+        $this->db->from('tbl_pegawai');
+        $this->db->order_by('id_pegawai', 'asc');
+        return $this->db->get()->result();
+    }
     public function get_video(){
         $this->db->select('*');
         $this->db->from('tbl_video');

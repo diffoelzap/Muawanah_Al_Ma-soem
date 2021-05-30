@@ -6,7 +6,7 @@
                         <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) == 'product'){echo 'active';}?>" href="<?= base_url('user/product')?>">PRODUK</a></li>
                         <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) == 'contact'){echo 'active';}?>" href="<?= base_url('user/contact')?>">CONTACT</a></li>
                         <li><a class="nav-link scrollto <?php if($this->uri->segment(1) == 'user' && $this->uri->segment(2) == 'reseller'){echo 'active';}?>" href="<?= base_url('user/reseller')?>">RESELER</a></li>
-                        <li><a class="nav-link scrollto" href="#">KARYAWAN</a></li>
+                        <li><a class="nav-link scrollto" href="<?= base_url('karyawan')?>">KARYAWAN</a></li>
                     </ul>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

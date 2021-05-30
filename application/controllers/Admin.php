@@ -20,7 +20,7 @@ class Admin extends CI_Controller {
         $data = array('judul' => 'Halaman Dasboard' ,
                       'data' => $this->m_admin->data_admin($id_admin),
                       'slide' => $this->m_user->get_slide(),
-                      'karyawan' => $this->m_admin->get_data_karyawan(),
+                      'pegawai' => $this->m_admin->get_data_pegawai(),
                       'first_brand' => $this->m_admin->get_data_first_brand(),
                       'second_brand' => $this->m_admin->get_data_second_brand(), 
                       'video' => $this->m_admin->get_data_video(),
@@ -74,7 +74,7 @@ class Admin extends CI_Controller {
                         'judul'           => 'Halaman Dashboard',
                         'data' => $this->m_admin->data_admin($id_admin),
                         'slide' => $this->m_user->get_slide(),
-                        'karyawan' => $this->m_admin->get_data_karyawan(),
+                        'pegawai' => $this->m_admin->get_data_pegawai(),
                         'first_brand' => $this->m_admin->get_data_first_brand(),
                         'second_brand' => $this->m_admin->get_data_second_brand(), 
                         'video' => $this->m_admin->get_data_video(),
@@ -110,10 +110,10 @@ class Admin extends CI_Controller {
                
         
     }
-    public function edit_karyawan($id_karyawan){
+    public function edit_pegawai($id_pegawai){
         $id_admin = $this->session->userdata('id_admin');
 
-                $config['upload_path'] = './assets/gambar_profile/';
+                $config['upload_path'] = './assets/pegawai/';
                 $config['allowed_types'] = 'jpg|png|jpeg|ico';
                 $config['max_size']     = '2000';
 
@@ -126,7 +126,7 @@ class Admin extends CI_Controller {
                             'judul'           => 'Halaman Dashboard',
                             'data' => $this->m_admin->data_admin($id_admin),
                             'slide' => $this->m_user->get_slide(),
-                            'karyawan' => $this->m_admin->get_data_karyawan(),
+                            'pegawai' => $this->m_admin->get_data_pegawai(),
                             'first_brand' => $this->m_admin->get_data_first_brand(),
                             'second_brand' => $this->m_admin->get_data_second_brand(), 
                             'video' => $this->m_admin->get_data_video(),
@@ -138,37 +138,37 @@ class Admin extends CI_Controller {
                     } else {
                         //hapus gambar
 
-                        $karyawan = $this->m_auth->data_karyawan($id_karyawan);
+                        $pegawai = $this->m_auth->data_pegawai($id_pegawai);
                         
-                        if($karyawan->foto_profil != ""){
-                            unlink('./assets/gambar_profile/'.$karyawan->foto_profil);
+                        if($pegawai->foto_pegawai != ""){
+                            unlink('./assets/pegawai/'.$pegawai->foto_pegawai);
                         }
                         //end hapus gambar
                         $upload_data = array('uploads' => $this->upload->data());
                         $config['image_library'] = 'gd2';
-                        $config['source_image'] = './assets/gambar_profile/'.$upload_data['uploads']['file_name'];
+                        $config['source_image'] = './assets/pegawai/'.$upload_data['uploads']['file_name'];
                         $this->load->library('image_lib',$config);
                         
                         $data = array(
-                                    'id_karyawan' => $id_karyawan,
-                                    'nama_lengkap'   => $this->input->post('nama_lengkap'),
-                                    'jabatan'   => $this->input->post('jabatan'),
-                                    'foto_profil'      => $upload_data['uploads']['file_name'],
+                                    'id_pegawai' => $id_pegawai,
+                                    'nama_pegawai'   => $this->input->post('nama_pegawai'),
+                                    'divisi_pegawai'   => $this->input->post('divisi_pegawai'),
+                                    'foto_pegawai'      => $upload_data['uploads']['file_name'],
                                    
                                             
                         );
-                        $this->m_auth->edit($data);
+                        $this->m_auth->edit_pegawai($data);
                         $this->session->set_flashdata('pesan', 'Data berhasil diedit');
                         redirect('admin');
                     }
 
                     $data = array(
-                        'id_karyawan' => $id_karyawan,
-                        'nama_lengkap'   => $this->input->post('nama_lengkap'),
-                        'jabatan'   => $this->input->post('jabatan'),
+                        'id_pegawai' => $id_pegawai,
+                        'nama_pegawai'   => $this->input->post('nama_pegawai'),
+                        'divisi_pegawai'   => $this->input->post('divisi_pegawai')
                                 
                         );
-                        $this->m_auth->edit($data);
+                        $this->m_auth->edit_pegawai($data);
                         $this->session->set_flashdata('pesan', 'Data berhasil diedit');
                         redirect('admin');
 
@@ -190,7 +190,7 @@ class Admin extends CI_Controller {
                     'judul'           => 'Halaman Dashboard',
                     'data' => $this->m_admin->data_admin($id_admin),
                     'slide' => $this->m_user->get_slide(),
-                    'karyawan' => $this->m_admin->get_data_karyawan(),
+                    'pegawai' => $this->m_admin->get_data_pegawai(),
                     'first_brand' => $this->m_admin->get_data_first_brand(),
                     'second_brand' => $this->m_admin->get_data_second_brand(), 
                     'video' => $this->m_admin->get_data_video(),
@@ -257,7 +257,7 @@ class Admin extends CI_Controller {
                     'judul'           => 'Halaman Dashboard',
                     'data' => $this->m_admin->data_admin($id_admin),
                     'slide' => $this->m_user->get_slide(),
-                    'karyawan' => $this->m_admin->get_data_karyawan(),
+                    'pegawai' => $this->m_admin->get_data_pegawai(),
                     'first_brand' => $this->m_admin->get_data_first_brand(),
                     'second_brand' => $this->m_admin->get_data_second_brand(),
                     'video' =>  $this->m_admin->get_data_video(),
@@ -305,7 +305,7 @@ class Admin extends CI_Controller {
                     'judul'           => 'Halaman Dashboard',
                     'data' => $this->m_admin->data_admin($id_admin),
                     'slide' => $this->m_user->get_slide(),
-                    'karyawan' => $this->m_admin->get_data_karyawan(),
+                    'pegawai' => $this->m_admin->get_data_pegawai(),
                     'first_brand' => $this->m_admin->get_data_first_brand(),
                     'second_brand' => $this->m_admin->get_data_second_brand(), 
                     'video' => $this->m_admin->get_data_video(),

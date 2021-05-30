@@ -115,18 +115,18 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                            foreach ($karyawan as $key => $value) {
+                                            foreach ($pegawai as $key => $value) {
                                         ?>
                                         <tr>
                                             <td>
                                                 <div class="img-container">
-                                                    <img src="<?= base_url('assets/gambar_profile/'.$value->foto_profil) ?>" alt="...">
+                                                    <img src="<?= base_url('assets/pegawai/'.$value->foto_pegawai) ?>" alt="...">
                                                 </div>
                                             </td>
-                                            <td><?= $value->nama_lengkap?></td>
-                                            <td><?= $value->divisi?></td>
+                                            <td><?= $value->nama_pegawai?></td>
+                                            <td><?= $value->divisi_pegawai?></td>
                                             <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" class="btn btn-success" data-toggle="modal" data-target="#edit_pegawai<?= $value->id_karyawan ?>">
+                                                <button type="button" rel="tooltip" class="btn btn-success" data-toggle="modal" data-target="#edit_pegawai<?= $value->id_pegawai ?>">
                                                     <i class="material-icons">edit</i>
                                                 </button>
                                             </td>
@@ -266,8 +266,8 @@
 
 
         <!-- modal edit-->
-<?php foreach ($karyawan as $key => $value) { ?>
-<div class="modal fade" id="edit_pegawai<?= $value->id_karyawan ?>">
+<?php foreach ($pegawai as $key => $value) { ?>
+<div class="modal fade" id="edit_pegawai<?= $value->id_pegawai?>">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -276,12 +276,12 @@
             <div class="modal-body">
                     <?php 
 
-                        echo form_open_multipart('admin/edit_karyawan/'.$value->id_karyawan);
+                        echo form_open_multipart('admin/edit_pegawai/'.$value->id_pegawai);
                     ?>
                     
                         <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                             <div class="fileinput-new thumbnail">
-                                <img src="<?= base_url('assets/gambar_profile/'.$value->foto_profil) ?>" width="100px">
+                                <img src="<?= base_url('assets/pegawai/'.$value->foto_pegawai) ?>" width="100px">
                             </div>
                             <div class="fileinput-preview fileinput-exists thumbnail"></div>
                             <div>
@@ -296,11 +296,11 @@
 
                         <div class="form-group label-floating">
                             <label class="control-label">Username</label>
-                            <input type="text" name="nama_lengkap" class="form-control" value="<?= $value->nama_lengkap?>" required>
+                            <input type="text" name="nama_pegawai" class="form-control" value="<?= $value->nama_pegawai?>" required>
                         </div>
                         <div class="form-group label-floating">
                             <label class="control-label">Jabatan</label>
-                            <input type="text" class="form-control" name="jabatan" value="<?=  $value->jabatan  ?>" required>
+                            <input type="text" class="form-control" name="divisi_pegawai" value="<?=  $value->divisi_pegawai  ?>" required>
                         </div>
 
             </div>

@@ -142,65 +142,21 @@
           <div class="col-xl-10">
             <div class="row justify-content-center">
 
-
+          <?php foreach ($pegawai as $key => $value) {
+           ?>
               <div class="col-xl-2 col-lg-4 col-md-6" data-wow-delay="0.1s">
                 <div class="member">
-                  <img src="<?= base_url() ?>assets/img/team/so1.jpg" class="img-fluid" alt="">
+                  <img src="<?= base_url('assets/pegawai/'.$value->foto_pegawai) ?>" class="img-fluid" alt="">
                   <div class="member-info">
                     <div class="member-info-content">
-                      <h4>Awat Widuri</h4>
-                      <span>Operational Head</span>
+                      <h4><?= $value->nama_pegawai?></h4>
+                      <span><?= $value->divisi_pegawai?></span>
                     </div>
                   </div>
                 </div>
               </div> <!-- End Member Item -->
-
-              <div class="col-xl-2 col-lg-4 col-md-6" data-wow-delay="0.2s">
-                <div class="member">
-                  <img src="<?= base_url() ?>assets/img/team/so2.jpg" class="img-fluid" alt="">
-                  <div class="member-info">
-                    <div class="member-info-content">
-                      <h4>Usep Sulaeman</h4>
-                      <span>Operational Staff</span>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- End Member Item -->
-              <div class="col-xl-2 col-lg-4 col-md-6" data-wow-delay="0.2s">
-                <div class="member">
-                  <img src="<?= base_url() ?>assets/img/team/so1.jpg" class="img-fluid" alt="">
-                  <div class="member-info">
-                    <div class="member-info-content">
-                      <h4>Muhammad Lutfi</h4>
-                      <span>Chief Marketing Office Uni I</span>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- End Member Item -->
-              <div class="col-xl-2 col-lg-4 col-md-6" data-wow-delay="0.2s">
-                <div class="member">
-                  <img src="<?= base_url() ?>assets/img/team/so2.jpg" class="img-fluid" alt="">
-                  <div class="member-info">
-                    <div class="member-info-content">
-                      <h4>Sudianto</h4>
-                      <span>Chief Marketing Office Uni II</span>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- End Member Item -->
-              <div class="col-xl-2 col-lg-4 col-md-6" data-wow-delay="0.2s">
-                <div class="member">
-                  <img src="<?= base_url() ?>assets/img/team/so3.jpg" class="img-fluid" alt="">
-                  <div class="member-info">
-                    <div class="member-info-content">
-                      <h4>Darso Mulyawan</h4>
-                      <span>Chief Operational Office</span>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- End Member Item -->
-
-
+          
+          <?php } ?>
 
             </div>
           </div>
