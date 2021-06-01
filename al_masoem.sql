@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Bulan Mei 2021 pada 00.57
+-- Waktu pembuatan: 30 Bulan Mei 2021 pada 15.16
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -167,6 +167,30 @@ INSERT INTO `tbl_karyawan` (`id_karyawan`, `username`, `password`, `nik`, `noreg
 (12, 'hibbanm', '123456', '3277030212980045', '4567', 'Hibban', 'hihi', 'Ranca Ekek', '2021-04-27', 'Laki - Laki', 'Kristen', 'WNI', 'Belum Menikah', 'Tetap', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Manager', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', 'Moon.jpg'),
 (13, 'zahnil', '123456', '327703021298075', '4323', 'Zahnil', 'Buyung', 'Padang', '1998-12-02', 'Laki - Laki', 'Islam', 'WNI', 'Menikah', 'Sementara', '2021-04-26', 'Pt Al-Masoem', 'AM3', 'AM3', '', 'Manager', '1.4', 'JL KH USMAN DHOMIRI NO:01', 'JL KH USMAN DHOMIRI NO:01', 'logo_jadi1.png'),
 (14, 'wisnutama', '123456', '3210392103213', '4984', 'Wisnu', 'Tama', 'Bandung', '2021-05-14', 'Laki - Laki', 'Islam', 'WNI', 'Menikah', 'Sementara', '2021-05-13', 'asdsa', 'sadsa', 'sadsad', 'sadasd', 'sadsad', 'sadsad', 'JL.CISANGKAN', 'JL.CISANGKAN', 'Moon1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pegawai`
+--
+
+CREATE TABLE `tbl_pegawai` (
+  `id_pegawai` int(11) NOT NULL,
+  `nama_pegawai` varchar(255) DEFAULT NULL,
+  `divisi_pegawai` varchar(255) DEFAULT NULL,
+  `foto_pegawai` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_pegawai`
+--
+
+INSERT INTO `tbl_pegawai` (`id_pegawai`, `nama_pegawai`, `divisi_pegawai`, `foto_pegawai`) VALUES
+(1, 'Awat Widuri', 'Operational Head', 'so1.jpg'),
+(2, 'Usep Sulaeman', 'Operational Staff', 'so2.jpg'),
+(3, 'Muhammad Lutfi', 'Chief Marketing Office Uni I', 'so1.jpg'),
+(4, 'Sudianto', 'Chief Marketing Office Uni II', 'so2.jpg'),
+(5, 'Darso Mulyawan', 'Chief Operational Office', 'so3.jpg');
 
 -- --------------------------------------------------------
 
@@ -389,6 +413,12 @@ ALTER TABLE `tbl_karyawan`
   ADD PRIMARY KEY (`id_karyawan`);
 
 --
+-- Indeks untuk tabel `tbl_pegawai`
+--
+ALTER TABLE `tbl_pegawai`
+  ADD PRIMARY KEY (`id_pegawai`);
+
+--
 -- Indeks untuk tabel `tbl_peminjaman`
 --
 ALTER TABLE `tbl_peminjaman`
@@ -463,6 +493,12 @@ ALTER TABLE `tbl_job_des`
 --
 ALTER TABLE `tbl_karyawan`
   MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_pegawai`
+--
+ALTER TABLE `tbl_pegawai`
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_peminjaman`

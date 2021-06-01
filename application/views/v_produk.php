@@ -38,8 +38,8 @@
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="portfolio-details.html">App 1</a></h4>
-                <p>App</p>
+                <h4><a href="portfolio-details.html"><?= $value->nama_brand ?></a></h4>
+                <p><?= $value->deskripsi_brand ?></p>
               </div>
             </div>
           </div>
@@ -55,8 +55,8 @@
               </figure>
 
               <div class="portfolio-info">
-                <h4><a href="portfolio-details.html">Card 3</a></h4>
-                <p>Card</p>
+                <h4><a href="portfolio-details.html"><?= $value->nama_brand ?></a></h4>
+                <p><?= $value->deskripsi_brand ?></p>
               </div>
             </div>
           </div>
