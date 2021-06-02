@@ -14,6 +14,7 @@ class Auth extends CI_Controller {
     
     public function login()
     {
+        
         $this->form_validation->set_rules('username', 'Username', 'required', array(
             'required' => '%s Harus diisi !!!'                
         ));
@@ -26,7 +27,7 @@ class Auth extends CI_Controller {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $this->karyawan_login->login($username,$password);
-        } 
+        }
 
         $data = array('judul' => 'Login Karyawan');
         $this->load->view('v_login_karyawan', $data, FALSE);

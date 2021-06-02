@@ -197,7 +197,7 @@
                                             <label class="col-sm-2 label-on-left">Golongan</label>
                                             <div class="col-sm-10">
                                                 <div class="form-group">
-                                                    <p class="form-control-static"><?= $data->golongan ?></p>
+                                                    <p class="form-control-static"><?= $data->golongan ?>*</p>
                                                    
                                                 </div>
                                             </div>

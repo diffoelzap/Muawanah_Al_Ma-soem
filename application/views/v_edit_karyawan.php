@@ -299,12 +299,6 @@
                                                                     <input type="text" class="form-control" name="golongan" value="<?=  $data->golongan  ?>">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-4">
-                                                                <div class="form-group label-floating">
-                                                                    <label class="control-label">Job Des</label>
-                                                                    <input type="text" class="form-control" name="job_des" value="<?=  $data->job_des  ?>">
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                         <button type="submit" class="btn btn-info pull-right">Update</button>
                                                         <div class="clearfix"></div>
